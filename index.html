@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Germinados Muñiz — Microgreens de Asturias</title>
+  <meta name="description" content="Microgreens frescos cultivados en Asturias. Para mercados, fruterías y restaurantes que buscan ingredientes vivos de kilómetro cero.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --musgo:     #3a5a2a;
+      --hoja:      #5c8040;
+      --brote:     #8db86a;
+      --niebla:    #c8d8b4;
+      --crema:     #f7f3ec;
+      --tierra:    #7a5c38;
+      --corteza:   #4a3820;
+      --caliza:    #ede8df;
+      --texto:     #2a2a2a;
+      --suave:     #6b6b6b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--texto);
+      background: var(--crema);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 1.1rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled {
+      background: rgba(247,243,236,0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--musgo);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--musgo);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 0.6; }
+    .nav-cta {
+      background: var(--musgo) !important;
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.82rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--hoja) !important; opacity: 1 !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      padding-top: 5rem;
+    }
+    .hero-content {
+      padding: 5rem 4rem 5rem 5rem;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--hoja);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 1.5px;
+      background: var(--hoja);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4vw, 4rem);
+      line-height: 1.12;
+      color: var(--corteza);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--musgo);
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--suave);
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark {
+      background: var(--musgo);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-dark:hover { background: var(--corteza); transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1.5px solid var(--musgo);
+      color: var(--musgo);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { background: var(--niebla); }
+
+    .hero-visual {
+      height: 100vh;
+      background:
+        linear-gradient(160deg, rgba(58,90,42,0.35) 0%, rgba(58,90,42,0.1) 100%),
+        linear-gradient(to bottom right, #3a5a2a 0%, #5c8040 35%, #8db86a 65%, #c8d8b4 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-visual-inner {
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero-plant {
+      font-size: 8rem;
+      display: block;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .hero-visual-tag {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* ─── SECCIONES BASE ─── */
+    section { padding: 6rem 5rem; }
+    @media (max-width: 900px) {
+      section { padding: 4rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-content { padding: 4rem 1.5rem 2rem; }
+      .hero-visual { height: 50vh; }
+      nav { padding: 1rem 1.5rem; }
+      nav ul { display: none; }
+    }
+
+    .eyebrow {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--hoja);
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 24px; height: 1.5px; background: var(--hoja);
+    }
+    h2.title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--corteza);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .subtitle {
+      color: var(--suave);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── MARCA / HISTORIA ─── */
+    .marca { background: var(--caliza); }
+    .marca-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .marca-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    .marca-visual {
+      height: 420px;
+      background: linear-gradient(135deg, var(--musgo), var(--brote));
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .marca-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.12) 0%, transparent 60%);
+    }
+
+    .valores {
+      display: flex; flex-direction: column; gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .valor {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .valor-ico {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--niebla);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .valor h4 { font-size: 0.95rem; color: var(--musgo); margin-bottom: 0.2rem; font-weight: 600; }
+    .valor p { font-size: 0.88rem; color: var(--suave); line-height: 1.6; }
+
+    /* ─── PRODUCTOS ─── */
+    .productos { background: var(--crema); }
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .prod-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(58,90,42,0.1);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .prod-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(58,90,42,0.1); }
+    .prod-img {
+      height: 160px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4.5rem;
+    }
+    .prod-body { padding: 1.25rem; }
+    .prod-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--corteza);
+      margin-bottom: 0.35rem;
+    }
+    .prod-body p { font-size: 0.85rem; color: var(--suave); line-height: 1.55; }
+    .prod-tag {
+      display: inline-block;
+      margin-top: 0.75rem;
+      background: var(--niebla);
+      color: var(--musgo);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    /* MEZCLAS */
+    .mezclas-strip {
+      margin-top: 3rem;
+      background: var(--musgo);
+      border-radius: 20px;
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .mezcla h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+    .mezcla p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+    .mezcla-precio {
+      display: inline-block;
+      margin-top: 0.6rem;
+      background: rgba(255,255,255,0.12);
+      color: var(--brote);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    /* ─── RECETAS ─── */
+    .recetas { background: var(--caliza); }
+    .recetas-intro {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+      align-items: end;
+    }
+    @media (max-width: 900px) { .recetas-intro { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+    .recetas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .receta-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(58,90,42,0.08);
+      transition: box-shadow 0.25s;
+    }
+    .receta-card:hover { box-shadow: 0 12px 32px rgba(58,90,42,0.1); }
+    .receta-header {
+      padding: 2rem 2rem 1rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .receta-emoji { font-size: 2.5rem; flex-shrink: 0; }
+    .receta-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--corteza);
+      margin-bottom: 0.2rem;
+    }
+    .receta-header .chef { font-size: 0.78rem; color: var(--hoja); font-weight: 600; letter-spacing: 0.05em; }
+    .receta-body { padding: 0 2rem 1.5rem; }
+    .receta-body p { font-size: 0.88rem; color: var(--suave); line-height: 1.65; margin-bottom: 1rem; }
+    .ingredientes {
+      background: var(--caliza);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+    }
+    .ingredientes h5 {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--musgo); margin-bottom: 0.6rem;
+    }
+    .ingredientes ul { list-style: none; }
+    .ingredientes li {
+      font-size: 0.83rem; color: var(--texto);
+      padding: 0.2rem 0;
+      border-bottom: 1px dashed rgba(58,90,42,0.12);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .ingredientes li:last-child { border: none; }
+    .ingredientes li::before { content: '·'; color: var(--hoja); font-weight: 700; }
+    .receta-footer {
+      padding: 0 2rem 1.5rem;
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .tag-receta {
+      background: var(--niebla);
+      color: var(--musgo);
+      font-size: 0.73rem; font-weight: 600;
+      padding: 0.22rem 0.65rem; border-radius: 999px;
+    }
+
+    /* ─── PARA RESTAURANTES ─── */
+    .restaurantes {
+      background: linear-gradient(135deg, var(--corteza) 0%, var(--musgo) 100%);
+      color: #fff;
+    }
+    .restaurantes .eyebrow { color: var(--brote); }
+    .restaurantes .eyebrow::before { background: var(--brote); }
+    .restaurantes h2.title { color: #fff; }
+    .restaurantes .subtitle { color: rgba(255,255,255,0.65); }
+
+    .rest-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .rest-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .rest-ico { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .rest-item h4 { font-size: 1rem; color: #fff; margin-bottom: 0.4rem; }
+    .rest-item p { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    .rest-cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--brote);
+      color: var(--corteza);
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .rest-cta:hover { background: #a8d180; transform: translateY(-1px); }
+
+    /* ─── CONTACTO ─── */
+    .contacto { background: var(--crema); }
+    .contacto-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .contacto-wrap { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+    .contacto-aside { }
+    .dato {
+      display: flex; gap: 1rem; align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .dato-ico {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: var(--niebla);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .dato strong { display: block; font-size: 0.9rem; color: var(--musgo); margin-bottom: 0.15rem; }
+    .dato span { font-size: 0.88rem; color: var(--suave); }
+
+    form { display: flex; flex-direction: column; gap: 0.9rem; }
+    form label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--musgo); margin-bottom: 0.2rem; display: block; }
+    form input, form textarea, form select {
+      width: 100%; padding: 0.8rem 1rem;
+      border: 1.5px solid #ddd; border-radius: 8px;
+      font-size: 0.92rem; font-family: inherit;
+      background: #fff;
+      transition: border-color 0.2s; outline: none;
+    }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--hoja); }
+    form textarea { height: 110px; resize: vertical; }
+    form button {
+      background: var(--musgo); color: #fff;
+      padding: 0.9rem;
+      border: none; border-radius: 8px;
+      font-size: 0.95rem; font-weight: 600;
+      font-family: inherit; cursor: pointer;
+      transition: background 0.2s;
+    }
+    form button:hover { background: var(--corteza); }
+    #msg-ok {
+      display: none;
+      text-align: center;
+      background: var(--niebla);
+      color: var(--musgo);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--corteza);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem;
+      font-size: 0.82rem;
+    }
+    footer strong { color: rgba(255,255,255,0.85); }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* ─── ANIMACIONES ─── */
+    .appear {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .appear.show { opacity: 1; transform: none; }
+    .appear-delay-1 { transition-delay: 0.1s; }
+    .appear-delay-2 { transition-delay: 0.2s; }
+    .appear-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Germinados Muñiz</a>
+  <ul>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#recetas">Recetas</a></li>
+    <li><a href="#restaurantes">Para restaurantes</a></li>
+    <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Grado, Asturias · Km 0</div>
+    <h1>Ingredientes vivos<br>para cocinas <em>que cuidan</em></h1>
+    <p class="hero-desc">
+      Microgreens cultivados con tiempo y cuidado en Asturias. Sabores intensos, colores vibrantes y la energía de la planta en su momento justo.
+    </p>
+    <div class="hero-btns">
+      <a href="#recetas" class="btn-dark">Ver recetas</a>
+      <a href="#contacto" class="btn-ghost">Para restaurantes</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <span class="hero-plant">🌱</span>
+      <div class="hero-visual-tag">Cosecha semanal · Asturias</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCA -->
+<section class="marca">
+  <div class="marca-inner">
+    <div class="marca-visual">🌿</div>
+    <div class="appear">
+      <div class="eyebrow">Nuestra historia</div>
+      <h2 class="title">Del almacén<br>a la mesa</h2>
+      <p style="color:var(--suave);font-size:1rem;line-height:1.75;margin-bottom:2rem;">
+        Germinados Muñiz nació en Asturias con una idea simple: llevar ingredientes vivos de verdad a quienes cocinan con intención. Sin intermediarios, sin semanas en cámara. Solo plantas en su mejor momento.
+      </p>
+      <div class="valores">
+        <div class="valor">
+          <div class="valor-ico">🌍</div>
+          <div>
+            <h4>Kilómetro cero real</h4>
+            <p>Cultivados y cosechados en Asturias. Del campo a tu plato en menos de 48 horas.</p>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-ico">⏱️</div>
+          <div>
+            <h4>Cosecha en el momento justo</h4>
+            <p>Cada variedad se recoge cuando alcanza su máxima expresión de sabor y nutrición.</p>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-ico">🤝</div>
+          <div>
+            <h4>Trato directo</h4>
+            <p>Hablamos contigo, conocemos tu cocina y adaptamos el suministro a lo que necesitas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="productos" id="productos">
+  <div class="eyebrow appear">Lo que cultivamos</div>
+  <h2 class="title appear">Una selección viva</h2>
+  <p class="subtitle appear">Variedades elegidas por su sabor, su color y lo que aportan al plato. Cada semana, frescas.</p>
+
+  <div class="productos-grid appear">
+    <div class="prod-card">
+      <div class="prod-img" style="background:linear-gradient(135deg,#e8f5d4,#c8e8a0);">🫛</div>
+      <div class="prod-body">
+        <h4>Guisante</h4>
+        <p>Dulce, tierno y versátil. Perfecto sobre cremas, risottos y entrantes ligeros.</p>
+        <span class="prod-tag">Sabor suave</span>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img" style="background:linear-gradient(135deg,#fff8d4,#fde68a);">🌻</div>
+      <div class="prod-body">
+        <h4>Girasol</h4>
+        <p>Textura crujiente y sabor a fruto seco. Da cuerpo a ensaladas y tartares.</p>
+        <span class="prod-tag">Textura crujiente</span>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img" style="background:linear-gradient(135deg,#d4f0e0,#a0dcbc);">🥦</div>
+      <div class="prod-body">
+        <h4>Brócoli</h4>
+        <p>Sabor limpio y mineral. El favorito de los chefs por su aroma fresco y color intenso.</p>
+        <span class="prod-tag">Alta nutrición</span>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-img" style="background:linear-gradient(135deg,#fde4e4,#f9a8a8);">🌶️</div>
+      <div class="prod-body">
+        <h4>Rábano Rojo</h4>
+        <p>Un toque picante y color vivo. Transforma cualquier plato en algo con personalidad.</p>
+        <span class="prod-tag">Carácter picante</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mezclas-strip appear">
+    <div class="mezcla">
+      <h4>Mix Clásico</h4>
+      <p>La mezcla equilibrada para todos los días. Funciona en todo tipo de platos.</p>
+      <span class="mezcla-precio">desde 2,50 €</span>
+    </div>
+    <div class="mezcla">
+      <h4>Mix Picante</h4>
+      <p>Con rábano y mostaza. Para platos que piden carácter y algo que morder.</p>
+      <span class="mezcla-precio">desde 2,80 €</span>
+    </div>
+    <div class="mezcla">
+      <h4>Mix Premium Visual</h4>
+      <p>Colores vivos, texturas variadas. Hecho para emplatar y sorprender.</p>
+      <span class="mezcla-precio">desde 4,50 €</span>
+    </div>
+    <div class="mezcla">
+      <h4>Mix Km 0 Asturiano</h4>
+      <p>Variedades de temporada con identidad local. El sabor de Asturias en el plato.</p>
+      <span class="mezcla-precio">desde 3,20 €</span>
+    </div>
+  </div>
+</section>
+
+<!-- RECETAS -->
+<section class="recetas" id="recetas">
+  <div class="recetas-intro">
+    <div>
+      <div class="eyebrow appear">Inspiración en cocina</div>
+      <h2 class="title appear">Recetas con<br><em>microgreens</em></h2>
+    </div>
+    <p class="appear" style="color:var(--suave);font-size:1rem;line-height:1.75;">
+      Los microgreens no son decoración. Son el ingrediente que cambia el sabor, la textura y la historia de un plato. Aquí van algunas ideas para empezar.
+    </p>
+  </div>
+
+  <div class="recetas-grid appear">
+
+    <div class="receta-card">
+      <div class="receta-header">
+        <div class="receta-emoji">🥗</div>
+        <div>
+          <div class="chef">Entrante · Primavera</div>
+          <h3>Tartar de remolacha con brotes de guisante</h3>
+        </div>
+      </div>
+      <div class="receta-body">
+        <p>La dulzura terrosa de la remolacha encuentra su contrapunto en el frescor vegetal del guisante. Un entrante que entra por los ojos y se queda en el paladar.</p>
+        <div class="ingredientes">
+          <h5>Microgreens que usa</h5>
+          <ul>
+            <li>Guisante — frescor y dulzor</li>
+            <li>Rábano Rojo — contraste picante</li>
+            <li>Brócoli — aromas verdes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="receta-footer">
+        <span class="tag-receta">Entrante</span>
+        <span class="tag-receta">Vegetariano</span>
+        <span class="tag-receta">Alta presentación</span>
+      </div>
+    </div>
+
+    <div class="receta-card">
+      <div class="receta-header">
+        <div class="receta-emoji">🍝</div>
+        <div>
+          <div class="chef">Plato principal · Todo el año</div>
+          <h3>Pasta fresca con crema de calabaza y girasol crujiente</h3>
+        </div>
+      </div>
+      <div class="receta-body">
+        <p>La crema untuosa de calabaza pide algo que la levante. Los brotes de girasol aportan textura, sabor a fruto seco y un contraste visual que eleva el plato al siguiente nivel.</p>
+        <div class="ingredientes">
+          <h5>Microgreens que usa</h5>
+          <ul>
+            <li>Girasol — textura crujiente y sabor a nuez</li>
+            <li>Guisante — frescor en el acabado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="receta-footer">
+        <span class="tag-receta">Principal</span>
+        <span class="tag-receta">Vegetariano</span>
+        <span class="tag-receta">Reconfortante</span>
+      </div>
+    </div>
+
+    <div class="receta-card">
+      <div class="receta-header">
+        <div class="receta-emoji">🐟</div>
+        <div>
+          <div class="chef">Plato principal · Mar y huerta</div>
+          <h3>Merluza a la plancha con mix picante y aliño de limón</h3>
+        </div>
+      </div>
+      <div class="receta-body">
+        <p>El pescado blanco agradece los contrastes. El mix picante de rábano y mostaza activa el paladar y el aliño de limón une todo con elegancia. Un clásico renovado.</p>
+        <div class="ingredientes">
+          <h5>Microgreens que usa</h5>
+          <ul>
+            <li>Mix Picante — rábano + mostaza</li>
+            <li>Brócoli — frescor mineral</li>
+          </ul>
+        </div>
+      </div>
+      <div class="receta-footer">
+        <span class="tag-receta">Principal</span>
+        <span class="tag-receta">Pescado</span>
+        <span class="tag-receta">Mediterráneo</span>
+      </div>
+    </div>
+
+    <div class="receta-card">
+      <div class="receta-header">
+        <div class="receta-emoji">🥩</div>
+        <div>
+          <div class="chef">Principal · Carne</div>
+          <h3>Solomillo con reducción de vino y Mix Km 0</h3>
+        </div>
+      </div>
+      <div class="receta-body">
+        <p>Los microgreens asturianos sobre una carne de calidad cuentan una historia de origen. El Mix Km 0 aporta identidad local a un plato que ya de por sí habla de territorio.</p>
+        <div class="ingredientes">
+          <h5>Microgreens que usa</h5>
+          <ul>
+            <li>Mix Km 0 Asturiano — identidad local</li>
+            <li>Rábano Rojo — color y contraste</li>
+          </ul>
+        </div>
+      </div>
+      <div class="receta-footer">
+        <span class="tag-receta">Principal</span>
+        <span class="tag-receta">Carne</span>
+        <span class="tag-receta">Km 0</span>
+      </div>
+    </div>
+
+    <div class="receta-card">
+      <div class="receta-header">
+        <div class="receta-emoji">🍳</div>
+        <div>
+          <div class="chef">Brunch · Desayuno elevado</div>
+          <h3>Huevos benedictinos con brotes de brócoli y guisante</h3>
+        </div>
+      </div>
+      <div class="receta-body">
+        <p>El clásico del brunch gana profundidad cuando los brotes aportan frescor y matices verdes a la richeza de la hollandaise. Un plato que se hace especial sin complicarse.</p>
+        <div class="ingredientes">
+          <h5>Microgreens que usa</h5>
+          <ul>
+            <li>Brócoli — frescor y aroma</li>
+            <li>Guisante — dulzor vegetal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="receta-footer">
+        <span class="tag-receta">Brunch</span>
+        <span class="tag-receta">Desayuno</span>
+        <span class="tag-receta">Moderno</span>
+      </div>
+    </div>
+
+    <div class="receta-card">
+      <div class="receta-header">
+        <div class="receta-emoji">🍦</div>
+        <div>
+          <div class="chef">Postre · Sorpresa</div>
+          <h3>Pannacotta de vainilla con brotes y frutos rojos</h3>
+        </div>
+      </div>
+      <div class="receta-body">
+        <p>El postre donde nadie lo espera. Unos brotes de guisante o girasol sobre una pannacotta rompen la expectativa y crean una experiencia que los comensales recuerdan.</p>
+        <div class="ingredientes">
+          <h5>Microgreens que usa</h5>
+          <ul>
+            <li>Guisante — suave, inesperado</li>
+            <li>Mix Premium Visual — color y textura</li>
+          </ul>
+        </div>
+      </div>
+      <div class="receta-footer">
+        <span class="tag-receta">Postre</span>
+        <span class="tag-receta">Sorpresa</span>
+        <span class="tag-receta">Visual</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PARA RESTAURANTES -->
+<section class="restaurantes" id="restaurantes">
+  <div class="eyebrow appear">Suministro profesional</div>
+  <h2 class="title appear">Diseñado para<br>cocinas exigentes</h2>
+  <p class="subtitle appear">Entrega semanal, trazabilidad completa y contacto directo con el productor. Sin sorpresas.</p>
+
+  <div class="rest-grid appear">
+    <div class="rest-item">
+      <div class="rest-ico">📦</div>
+      <h4>Entrega semanal garantizada</h4>
+      <p>Programamos tu pedido tras la cosecha. Siempre sabes cuándo llega y qué tanda estás recibiendo.</p>
+    </div>
+    <div class="rest-item">
+      <div class="rest-ico">🏷️</div>
+      <h4>Trazabilidad en cada envase</h4>
+      <p>Código de lote, fecha de cosecha y fecha de consumo preferente. Todo lo que necesita tu cocina para cumplir normativa.</p>
+    </div>
+    <div class="rest-item">
+      <div class="rest-ico">📐</div>
+      <h4>Formatos de hostelería</h4>
+      <p>Envases de 1L y 2L pensados para uso profesional. También servimos muestras antes de comprometerte.</p>
+    </div>
+    <div class="rest-item">
+      <div class="rest-ico">💬</div>
+      <h4>Trato directo con el productor</h4>
+      <p>Sin intermediarios. Hablas con quien los cultiva. Ajustamos variedades, cantidades y frecuencia a tu carta.</p>
+    </div>
+  </div>
+
+  <a href="#contacto" class="rest-cta">
+    Solicitar muestra gratuita →
+  </a>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-wrap">
+    <div class="contacto-aside appear">
+      <div class="eyebrow">Hablemos</div>
+      <h2 class="title">¿Tienes una cocina<br>que cuida el origen?</h2>
+      <p style="color:var(--suave);font-size:1rem;line-height:1.75;margin-bottom:2.5rem;">
+        Cuéntanos qué necesitas. Te mandamos una muestra, sin compromiso, para que pruebes y decidas con el plato delante.
+      </p>
+      <div class="dato">
+        <div class="dato-ico">📍</div>
+        <div>
+          <strong>Dónde estamos</strong>
+          <span>Grado, Asturias</span>
+        </div>
+      </div>
+      <div class="dato">
+        <div class="dato-ico">🗓️</div>
+        <div>
+          <strong>En mercados</strong>
+          <span>Martes, viernes y domingos</span>
+        </div>
+      </div>
+      <div class="dato">
+        <div class="dato-ico">📸</div>
+        <div>
+          <strong>Instagram</strong>
+          <span>@germinadosmuniz</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="appear" onsubmit="enviar(event)">
+      <div>
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre o el del restaurante" required>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" placeholder="para responderte" required>
+      </div>
+      <div>
+        <label>Eres</label>
+        <select>
+          <option value="">Selecciona...</option>
+          <option>Restaurante / Hostelería</option>
+          <option>Frutería / Tienda local</option>
+          <option>Particular / Mercado</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div>
+        <label>Mensaje</label>
+        <textarea placeholder="Cuéntanos qué te interesa, qué variedades, con qué frecuencia..."></textarea>
+      </div>
+      <button type="submit">Enviar mensaje</button>
+      <div id="msg-ok">✓ Mensaje enviado. Te contactamos pronto.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Germinados Muñiz</span>
+  <p><strong>Microgreens frescos de Asturias</strong> · Producción artesanal en Grado</p>
+  <p style="margin-top:0.4rem;">© 2026 Germinados Muñiz · Todos los derechos reservados</p>
+</footer>
+
+<script>
+  // Nav al hacer scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Animaciones al aparecer
+  const els = document.querySelectorAll('.appear');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+
+  // Formulario
+  function enviar(e) {
+    e.preventDefault();
+    document.getElementById('msg-ok').style.display = 'block';
+    e.target.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+  }
+</script>
+</body>
+</html>
