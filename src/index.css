@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-crema font-sans text-corteza antialiased overflow-x-hidden; }
+  h1, h2, h3 { @apply font-serif; }
+}
+
+@layer components {
+  .eyebrow {
+    @apply flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-hoja mb-3;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply block w-6 h-px bg-hoja flex-shrink-0;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl text-corteza leading-tight mb-4;
+  }
+  .section-sub {
+    @apply text-tierra/70 text-base leading-relaxed max-w-xl mb-10;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-musgo text-white font-semibold
+           px-6 py-3 rounded-lg text-sm transition-all duration-200 min-h-[48px]
+           hover:bg-corteza hover:-translate-y-px active:translate-y-0;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-musgo text-musgo
+           font-semibold px-6 py-3 rounded-lg text-sm transition-all duration-200 min-h-[48px]
+           hover:bg-niebla active:bg-niebla/70;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-14px) rotate(2deg); }
+}
+.float { animation: float 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .float { animation: none; }
+}
