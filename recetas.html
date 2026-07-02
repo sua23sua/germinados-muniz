@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recetas e ideas — Germinados Muñiz</title>
+<meta name="description" content="Veinticuatro formas concretas de usar los microgreens de Germinados Muñiz, seis por variedad, agrupadas por momento del día y filtrables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,700,100&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F7F9F2;
+  --tinta:#17301C;
+  --brote:#4C8C3F;
+  --rabano:#8E3B6B;
+  --girasol:#C9A227;
+  --brocoli:#6FA35C;
+  --sustrato:#E8E3D5;
+  --linea:#D8DECB;
+  --display:'Fraunces',Georgia,serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rabano);outline-offset:3px;border-radius:2px}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(247,249,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.logo{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo svg{display:block}
+.nav-links{display:flex;gap:26px;list-style:none;font-size:.92rem;font-weight:500}
+.nav-links a{text-decoration:none;opacity:.75;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-links a.activo{opacity:1;color:var(--brote);font-weight:600}
+@media(max-width:760px){.nav-links li:nth-child(n+3){display:none}.nav-links li:last-child{display:list-item}}
+
+/* ---------- HERO DE PÁGINA ---------- */
+.hero-page{padding:76px 24px 20px}
+.hero-page .wrap{max-width:760px}
+.hero-tag{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brote);display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
+.hero-tag::before{content:'';width:34px;height:2px;background:var(--brote)}
+.hero-page h1{font-family:var(--display);font-weight:600;font-size:clamp(2.2rem,5.6vw,3.6rem);line-height:1.08;letter-spacing:-.02em}
+.hero-page p.lede{margin-top:20px;font-size:clamp(1rem,1.6vw,1.15rem);max-width:56ch;opacity:.85}
+.volver{display:inline-flex;align-items:center;gap:6px;margin-top:28px;font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;text-decoration:none}
+.volver:hover{opacity:1}
+
+/* ---------- FILTROS ---------- */
+.filtros{max-width:1080px;margin:36px auto 0;padding:0 24px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;padding:9px 18px;border-radius:999px;border:1.5px solid var(--linea);background:#fff;color:var(--tinta);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--brote)}
+.chip.activo{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+
+/* ---------- SECCIONES / GRUPOS ---------- */
+.wrap{max-width:1080px;margin:0 auto}
+section{padding:64px 24px 8px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brote);margin-bottom:14px}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.02em;line-height:1.15;max-width:30ch}
+.grupo-intro{margin-top:10px;max-width:58ch;opacity:.8;font-size:.98rem}
+
+/* ---------- TARJETAS DE RECETA ---------- */
+.grid-r2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:36px 0 40px}
+.grid-r2{margin-top:36px;margin-bottom:8px}
+.receta2{border:1.5px solid var(--linea);border-radius:16px;padding:22px 22px 20px;background:#fff;transition:transform .2s,box-shadow .2s}
+.receta2:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(23,48,28,.08)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-bottom:14px}
+.dot-guisante{background:var(--brote)}
+.dot-girasol{background:var(--girasol)}
+.dot-brocoli{background:var(--brocoli)}
+.dot-rabano{background:var(--rabano)}
+.receta2 h3{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:8px}
+.receta2 p{font-size:.93rem;opacity:.82}
+.tag-variedad{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.tag-guisante{background:rgba(76,140,63,.12);color:var(--brote)}
+.tag-girasol{background:rgba(201,162,39,.15);color:#8a6d15}
+.tag-brocoli{background:rgba(111,163,92,.15);color:#4f7a41}
+.tag-rabano{background:rgba(142,59,107,.12);color:var(--rabano)}
+
+/* ---------- FOOTER ---------- */
+footer.pie{border-top:1px solid var(--linea);padding:44px 24px;margin-top:56px}
+.pie .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.pie small{font-family:var(--mono);font-size:.75rem;opacity:.6}
+</style>
+</head>
+<body>
+
+<nav aria-label="Principal">
+  <a class="logo" href="index.html#top">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.5" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
+    Germinados Muñiz
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#queson">Qué son</a></li>
+    <li><a href="index.html#variedades">Variedades</a></li>
+    <li><a href="recetas.html" class="activo">Recetas</a></li>
+    <li><a href="index.html#preguntas">Preguntas</a></li>
+  </ul>
+</nav>
+
+<header class="hero-page" id="top">
+  <div class="wrap">
+    <span class="hero-tag">Ideas de cocina</span>
+    <h1>Veinticuatro ideas para no complicarte.</h1>
+    <p class="lede">Ya sabes lo básico: crudos y al final, nunca en la sartén. Aquí tienes seis formas concretas de usar cada variedad, agrupadas por momento del día. Si tienes una variedad concreta en la nevera, fíltrala abajo.</p>
+  </div>
+</header>
+
+<div class="filtros" role="group" aria-label="Filtrar recetas por variedad">
+  <button class="chip activo" data-filtro="todas">Todas</button>
+  <button class="chip" data-filtro="guisante">Guisante</button>
+  <button class="chip" data-filtro="girasol">Girasol</button>
+  <button class="chip" data-filtro="brocoli">Brócoli</button>
+  <button class="chip" data-filtro="rabano">Rábano rojo</button>
+</div>
+
+<section class="grupo" data-grupo="desayunos">
+  <div class="wrap">
+    <p class="eyebrow">Desayunos y meriendas</p>
+    <h2>Para arrancar el día con algo verde.</h2>
+    <p class="grupo-intro">Ideas de dos minutos, pensadas para antes de salir de casa.</p>
+    <div class="grid-r2">
+      <article class="receta2" data-variedad="girasol">
+        <span class="dot dot-girasol"></span>
+        <h3>Bol de yogur con girasol</h3>
+        <p>Yogur natural sin azucarar, un chorrito de aceite de oliva, sal en escamas y un puñado de brotes de girasol encima. Crujiente, salado, dos minutos.</p>
+        <span class="tag-variedad tag-girasol">Girasol</span>
+      </article>
+      <article class="receta2" data-variedad="rabano">
+        <span class="dot dot-rabano"></span>
+        <h3>Tostada de queso fresco y rábano</h3>
+        <p>Pan de barra tostado, una capa de queso fresco para untar y brotes de rábano rojo por encima. El picante suave despierta cualquier mañana.</p>
+        <span class="tag-variedad tag-rabano">Rábano rojo</span>
+      </article>
+      <article class="receta2" data-variedad="girasol">
+        <span class="dot dot-girasol"></span>
+        <h3>Bocadillo de tortilla templada</h3>
+        <p>Tortilla francesa recién hecha, aún caliente, con un puñado de brotes de girasol dentro del bocadillo. El calor los entibia sin llegar a cocinarlos.</p>
+        <span class="tag-variedad tag-girasol">Girasol</span>
+      </article>
+      <article class="receta2" data-variedad="guisante">
+        <span class="dot dot-guisante"></span>
+        <h3>Batido verde con guisante</h3>
+        <p>El batido de manzana y pera de toda la vida, con un puñado de brotes de guisante triturados dentro. Dulzor vegetal, sin sabor amargo.</p>
+        <span class="tag-variedad tag-guisante">Guisante</span>
+      </article>
+      <article class="receta2" data-variedad="rabano">
+        <span class="dot dot-rabano"></span>
+        <h3>Bol de requesón con rábano</h3>
+        <p>Requesón o queso batido, unas gotas de miel y brotes de rábano rojo por encima. El contraste dulce-picante engancha desde el primer bocado.</p>
+        <span class="tag-variedad tag-rabano">Rábano rojo</span>
+      </article>
+      <article class="receta2" data-variedad="guisante">
+        <span class="dot dot-guisante"></span>
+        <h3>Tostada de hummus con guisante</h3>
+        <p>Tostada con una capa de hummus, un chorrito de aceite y un puñado de brotes de guisante encima. Verde sobre verde, sabor suave.</p>
+        <span class="tag-variedad tag-guisante">Guisante</span>
+      </article>
+      <article class="receta2" data-variedad="brocoli">
+        <span class="dot dot-brocoli"></span>
+        <h3>Huevos revueltos con brócoli</h3>
+        <p>Huevos revueltos cremosos, recién hechos, con brotes de brócoli añadidos ya en el plato, nunca en la sartén.</p>
+        <span class="tag-variedad tag-brocoli">Brócoli</span>
+      </article>
+      <article class="receta2" data-variedad="brocoli">
+        <span class="dot dot-brocoli"></span>
+        <h3>Tostada de aguacate y brócoli</h3>
+        <p>La clásica tostada de aguacate, pero con brotes de brócoli en vez de guisante: sabor más suave, ideal para los peques de la casa.</p>
+        <span class="tag-variedad tag-brocoli">Brócoli</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="grupo" data-grupo="diario">
+  <div class="wrap">
+    <p class="eyebrow">Platos de diario</p>
+    <h2>Los platos de siempre, con un puñado más.</h2>
+    <p class="grupo-intro">No cambian la receta, solo el último gesto antes de servir.</p>
+    <div class="grid-r2">
+      <article class="receta2" data-variedad="brocoli">
+        <span class="dot dot-brocoli"></span>
+        <h3>Ensalada de pasta con brócoli</h3>
+        <p>La ensalada de pasta que ya haces, con brotes de brócoli añadidos justo antes de servir, nunca antes.</p>
+        <span class="tag-variedad tag-brocoli">Brócoli</span>
+      </article>
+      <article class="receta2" data-variedad="rabano">
+        <span class="dot dot-rabano"></span>
+        <h3>Lentejas con un puñado de rábano</h3>
+        <p>El guiso de lentejas de siempre, con brotes de rábano rojo por encima al servir. Corta la grasa del guiso y aporta un punto picante.</p>
+        <span class="tag-variedad tag-rabano">Rábano rojo</span>
+      </article>
+      <article class="receta2" data-variedad="guisante">
+        <span class="dot dot-guisante"></span>
+        <h3>Patatas asadas con guisante</h3>
+        <p>Patatas al horno recién sacadas, un chorrito de aceite y un puñado de brotes de guisante puestos en caliente. Verde y frescor sobre un plato de cuchara.</p>
+        <span class="tag-variedad tag-guisante">Guisante</span>
+      </article>
+      <article class="receta2" data-variedad="girasol">
+        <span class="dot dot-girasol"></span>
+        <h3>Sándwich con girasol en vez de lechuga</h3>
+        <p>Pan de molde, pechuga de pollo, tomate, y brotes de girasol haciendo el papel de la lechuga, con más textura y más sabor.</p>
+        <span class="tag-variedad tag-girasol">Girasol</span>
+      </article>
+      <article class="receta2" data-variedad="girasol">
+        <span class="dot dot-girasol"></span>
+        <h3>Wrap de pollo con girasol</h3>
+        <p>Una tortita de trigo, pollo a la plancha, salsa de yogur y un buen puñado de brotes de girasol. Textura crujiente en cada bocado.</p>
+        <span class="tag-variedad tag-girasol">Girasol</span>
+      </article>
+      <article class="receta2" data-variedad="rabano">
+        <span class="dot dot-rabano"></span>
+        <h3>Crema de calabaza con rábano</h3>
+        <p>La crema de calabaza o zanahoria de siempre, con brotes de rábano rojo espolvoreados al servir, para romper la untuosidad.</p>
+        <span class="tag-variedad tag-rabano">Rábano rojo</span>
+      </article>
+      <article class="receta2" data-variedad="guisante">
+        <span class="dot dot-guisante"></span>
+        <h3>Revuelto de setas con guisante</h3>
+        <p>Revuelto de setas y ajo, con brotes de guisante añadidos fuera del fuego, cuando el plato ya está en la mesa.</p>
+        <span class="tag-variedad tag-guisante">Guisante</span>
+      </article>
+      <article class="receta2" data-variedad="brocoli">
+        <span class="dot dot-brocoli"></span>
+        <h3>Bowl de arroz con brócoli</h3>
+        <p>Bowl de arroz, verduras salteadas y huevo a la plancha, con brotes de brócoli como toque final fresco.</p>
+        <span class="tag-variedad tag-brocoli">Brócoli</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="grupo" data-grupo="quedar-bien">
+  <div class="wrap">
+    <p class="eyebrow">Para quedar bien</p>
+    <h2>El toque de restaurante, en casa.</h2>
+    <p class="grupo-intro">Cuando el plato ya está listo y solo falta el detalle final.</p>
+    <div class="grid-r2">
+      <article class="receta2" data-variedad="rabano">
+        <span class="dot dot-rabano"></span>
+        <h3>Carpaccio con rábano</h3>
+        <p>Carpaccio de ternera o de calabacín, con brotes de rábano rojo repartidos por encima. El morado destaca sobre el plato nada más servirlo.</p>
+        <span class="tag-variedad tag-rabano">Rábano rojo</span>
+      </article>
+      <article class="receta2" data-variedad="guisante">
+        <span class="dot dot-guisante"></span>
+        <h3>Tartar con corona de guisante</h3>
+        <p>Tartar de atún o de tomate, con un círculo de brotes de guisante alrededor. El clásico de restaurante, hecho en casa.</p>
+        <span class="tag-variedad tag-guisante">Guisante</span>
+      </article>
+      <article class="receta2" data-variedad="brocoli">
+        <span class="dot dot-brocoli"></span>
+        <h3>Risotto con brócoli espolvoreado</h3>
+        <p>Un risotto cremoso de champiñones o de queso, con brotes de brócoli justo al emplatar, antes de que se enfríe.</p>
+        <span class="tag-variedad tag-brocoli">Brócoli</span>
+      </article>
+      <article class="receta2" data-variedad="girasol">
+        <span class="dot dot-girasol"></span>
+        <h3>Gazpacho con flotante de girasol</h3>
+        <p>Gazpacho o salmorejo bien frío, con unos brotes de girasol flotando encima como toque final, justo antes de llevarlo a la mesa.</p>
+        <span class="tag-variedad tag-girasol">Girasol</span>
+      </article>
+      <article class="receta2" data-variedad="girasol">
+        <span class="dot dot-girasol"></span>
+        <h3>Tosta de salmón ahumado con girasol</h3>
+        <p>Pan tostado, salmón ahumado, queso crema y brotes de girasol encima. De los aperitivos que se acaban primero en la mesa.</p>
+        <span class="tag-variedad tag-girasol">Girasol</span>
+      </article>
+      <article class="receta2" data-variedad="rabano">
+        <span class="dot dot-rabano"></span>
+        <h3>Vieiras con rábano</h3>
+        <p>Vieiras a la plancha, un punto de reducción de naranja y unos brotes de rábano rojo encima. Color y picor en un solo bocado.</p>
+        <span class="tag-variedad tag-rabano">Rábano rojo</span>
+      </article>
+      <article class="receta2" data-variedad="guisante">
+        <span class="dot dot-guisante"></span>
+        <h3>Crema fría de guisante con más guisante</h3>
+        <p>Una crema fría de guisante clásica, servida con un puñado de brotes de guisante frescos por encima. El mismo sabor, en dos texturas.</p>
+        <span class="tag-variedad tag-guisante">Guisante</span>
+      </article>
+      <article class="receta2" data-variedad="brocoli">
+        <span class="dot dot-brocoli"></span>
+        <h3>Tataki con brócoli</h3>
+        <p>Tataki de atún o de pollo, con brotes de brócoli repartidos por el plato justo antes de llevarlo a la mesa.</p>
+        <span class="tag-variedad tag-brocoli">Brócoli</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding:8px 24px 64px">
+  <a class="volver" href="index.html#top">← Volver a la página principal</a>
+</div>
+
+<footer class="pie">
+  <div class="wrap">
+    <a class="logo" href="index.html#top">
+      <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.5" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
+      Germinados Muñiz
+    </a>
+    <small>Producción artesanal · Grado, Asturias · Sin pesticidas · Trazabilidad por lote</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('.receta2');
+  var grupos = document.querySelectorAll('.grupo');
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('activo'); });
+      chip.classList.add('activo');
+      var f = chip.dataset.filtro;
+
+      cards.forEach(function(card){
+        var mostrar = (f === 'todas' || card.dataset.variedad === f);
+        card.style.display = mostrar ? '' : 'none';
+      });
+
+      grupos.forEach(function(grupo){
+        var visibles = grupo.querySelectorAll('.receta2:not([style*="display: none"])');
+        grupo.style.display = visibles.length ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
