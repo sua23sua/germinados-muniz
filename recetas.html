@@ -36,7 +36,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-con
 .nav-links a{text-decoration:none;opacity:.75;transition:opacity .2s}
 .nav-links a:hover{opacity:1}
 .nav-links a.activo{opacity:1;color:var(--brote);font-weight:600}
-@media(max-width:760px){.nav-links li:nth-child(n+3){display:none}.nav-links li:last-child{display:list-item}}
+@media(max-width:760px){.nav-links li:nth-child(n+3){display:none}.nav-links li:last-child{display:list-item}.nav-links li:has(a.activo){display:list-item}}
 
 /* ---------- HERO DE PÁGINA ---------- */
 .hero-page{padding:76px 24px 20px}
@@ -83,6 +83,14 @@ h2{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.3re
 footer.pie{border-top:1px solid var(--linea);padding:44px 24px;margin-top:56px}
 .pie .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 .pie small{font-family:var(--mono);font-size:.75rem;opacity:.6}
+
+/* ---------- MÓVIL ---------- */
+@media(max-width:640px){
+  .hero-page{padding:50px 18px 16px}
+  section{padding:48px 18px 8px}
+  .filtros{margin-top:24px;padding:0 18px}
+  .grupo-intro{max-width:100%}
+}
 </style>
 </head>
 <body>

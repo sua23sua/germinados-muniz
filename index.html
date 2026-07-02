@@ -34,7 +34,7 @@ nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-con
 .nav-links{display:flex;gap:26px;list-style:none;font-size:.92rem;font-weight:500}
 .nav-links a{text-decoration:none;opacity:.75;transition:opacity .2s}
 .nav-links a:hover{opacity:1}
-@media(max-width:760px){.nav-links li:nth-child(n+3){display:none}}
+@media(max-width:760px){.nav-links li:nth-child(n+3){display:none}.nav-links li:last-child{display:list-item}}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:60px 24px 200px;overflow:hidden}
@@ -151,6 +151,17 @@ h2{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4.4vw,3rem)
 footer.pie{border-top:1px solid var(--linea);padding:44px 24px}
 .pie .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 .pie small{font-family:var(--mono);font-size:.75rem;opacity:.6}
+
+/* ---------- MÓVIL ---------- */
+@media(max-width:640px){
+  section{padding:56px 18px}
+  .hero{padding:44px 18px 150px;min-height:75vh}
+  .dato .num{font-size:2rem}
+  .etiqueta{transform:none;max-width:100%}
+  .regla{font-size:1.1rem;padding:18px 20px}
+  .faq summary{font-size:1.1rem}
+  .faq details p{max-width:100%}
+}
 </style>
 </head>
 <body>
