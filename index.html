@@ -2,445 +2,699 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Germinados Muñiz — Qué son los microgreens y cómo disfrutarlos</title>
-<meta name="description" content="Descubre qué son los microgreens: brotes tiernos con hasta 40 veces más vitaminas que la planta adulta. Cómo se cultivan en Grado, cómo se comen y cómo se conservan.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microgreens de Grado, Asturias | Germinados Muñiz</title>
+<meta name="description" content="Qué son los microgreens (microbrotes), cómo se cultivan en Grado y cómo se comen. Guisante, girasol, brócoli y rábano rojo en el mercado de Grado los martes, viernes y domingos.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Microgreens de Grado | Germinados Muñiz">
+<meta property="og:description" content="Qué son, cómo se cultivan en Grado y cómo se comen. En el mercado de Grado los martes, viernes y domingos.">
+<meta name="theme-color" content="#17301C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 24V12' stroke='%2317301C' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z' fill='%234C8C3F'/%3E%3Cpath d='M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z' fill='%238E3B6B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,700,100&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+/* ===== Base compartida (igual en las tres páginas) ===== */
 :root{
-  --papel:#F7F9F2;
-  --tinta:#17301C;
-  --brote:#4C8C3F;
-  --rabano:#8E3B6B;
-  --girasol:#C9A227;
-  --sustrato:#E8E3D5;
-  --linea:#D8DECB;
-  --display:'Fraunces',Georgia,serif;
-  --body:'Instrument Sans',system-ui,sans-serif;
-  --mono:'Space Mono',ui-monospace,monospace;
+  --hoja:#F2F5EC; --papel:#FFFFFF; --tinta:#17301C; --tinta-2:#43584A;
+  --brote:#4C8C3F; --brote-txt:#3A7030; --claro:#CDE8B5;
+  --rabano:#8E3B6B; --rabano-osc:#6F2C53; --girasol:#D2A12B; --coco:#8A6440;
+  --linea:#D5DCCA; --rojo:#C22A2A;
+  --serif:'Alegreya',Georgia,'Times New Roman',serif;
+  --sans:'Alegreya Sans','Segoe UI',system-ui,-apple-system,sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--papel);color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--hoja);color:var(--tinta);font-family:var(--sans);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+svg{display:block;max-width:100%}
+a{color:var(--brote-txt);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--tinta)}
 :focus-visible{outline:3px solid var(--rabano);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);color:var(--tinta);line-height:1.1}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:700;letter-spacing:-.005em;max-width:24ch}
+h3{font-size:1.28rem;font-weight:700;line-height:1.25}
+p,li{max-width:66ch}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.bloque{padding:88px 0}
+.papel{background:var(--papel)}
+.entrada{margin-top:14px;font-size:1.18rem;color:var(--tinta-2)}
+.oculto{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.salto{position:absolute;left:-9999px;top:8px;background:var(--tinta);color:#fff;padding:8px 14px;border-radius:4px;z-index:100}
+.salto:focus{left:12px}
 
-/* ---------- NAV ---------- */
-nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(247,249,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
-.logo{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo svg{display:block}
-.nav-links{display:flex;gap:26px;list-style:none;font-size:.92rem;font-weight:500}
-.nav-links a{text-decoration:none;opacity:.75;transition:opacity .2s}
-.nav-links a:hover{opacity:1}
-@media(max-width:760px){.nav-links li:nth-child(n+3){display:none}.nav-links li:last-child{display:list-item}}
+.nav{position:sticky;top:0;z-index:40;background:rgba(242,245,236,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.nav-in{max-width:1120px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:800;font-size:1.22rem;color:var(--tinta);text-decoration:none;white-space:nowrap}
+.marca:hover{color:var(--tinta)}
+.menu{display:flex;align-items:center;gap:24px;list-style:none}
+.menu a{color:var(--tinta);text-decoration:none;font-size:1.02rem;padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--tinta);border-bottom-color:var(--linea)}
+.menu a[aria-current="page"]{border-bottom-color:var(--brote)}
+.menu a.btn{padding:8px 16px;font-size:.98rem}
+.menu a.btn-wa,.menu a.btn-wa:hover{color:#fff;border-bottom-color:transparent}
+@media(max-width:760px){.menu .solo-ancho{display:none}}
+@media(max-width:520px){.nav .marca span{display:none}.menu{gap:18px}}
 
-/* ---------- HERO ---------- */
-.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:60px 24px 200px;overflow:hidden}
-.hero-inner{max-width:960px;margin:0 auto;width:100%}
-.hero-tag{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brote);display:inline-flex;align-items:center;gap:10px;margin-bottom:22px}
-.hero-tag::before{content:'';width:34px;height:2px;background:var(--brote)}
-.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,7.2vw,5.2rem);line-height:1.05;letter-spacing:-.025em;max-width:16ch}
-.hero h1 em{font-style:italic;color:var(--brote)}
-.hero p.lede{margin-top:26px;font-size:clamp(1.05rem,2vw,1.25rem);max-width:50ch;opacity:.85}
-.hero-scroll{margin-top:40px;font-family:var(--mono);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.hero-scroll:hover{opacity:1}
-.sprouts{position:absolute;left:0;right:0;bottom:0;height:190px;pointer-events:none}
-.sprouts svg{width:100%;height:100%;display:block}
-.soil{stroke:var(--tinta);stroke-width:3;opacity:.85}
-.stem{fill:none;stroke-width:5;stroke-linecap:round;stroke-dasharray:130;stroke-dashoffset:130;animation:grow 1.1s cubic-bezier(.3,.8,.3,1) forwards}
-.leaf{transform-origin:var(--ox) var(--oy);transform:scale(0);animation:pop .55s cubic-bezier(.3,1.6,.5,1) forwards}
-@keyframes grow{to{stroke-dashoffset:0}}
-@keyframes pop{to{transform:scale(1)}}
-@media(prefers-reduced-motion:reduce){
-  .stem{animation:none;stroke-dashoffset:0}
-  .leaf{animation:none;transform:scale(1)}
-}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1.06rem;line-height:1.2;text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid transparent;transition:background-color .15s,color .15s,border-color .15s}
+.btn svg{flex-shrink:0}
+.btn-wa{background:var(--rabano);color:#fff}
+.btn-wa:hover{background:var(--rabano-osc);color:#fff}
+.btn-linea{border-color:var(--tinta);color:var(--tinta)}
+.btn-linea:hover{background:var(--tinta);color:#fff}
+.btn-claro{border-color:#fff;color:#fff}
+.btn-claro:hover{background:#fff;color:var(--tinta)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 
-/* ---------- SECCIONES ---------- */
-section{padding:96px 24px}
-.wrap{max-width:1080px;margin:0 auto}
-.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brote);margin-bottom:14px}
-h2{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.02em;line-height:1.1;max-width:24ch}
-.section-intro{margin-top:16px;max-width:58ch;opacity:.82}
+.tabla-caja{overflow-x:auto;margin-top:32px;border:1px solid var(--linea);border-radius:6px;background:var(--papel)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:1rem}
+th,td{text-align:left;vertical-align:top;padding:14px 18px;border-bottom:1px solid var(--linea)}
+thead th{font-family:var(--serif);font-weight:700;font-size:1.08rem;background:#F7F9F3}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td i,th i{font-family:var(--serif);color:var(--tinta-2)}
+th small,td small{display:block;font-weight:400;color:var(--tinta-2);font-size:.9rem}
 
-/* qué son */
-.queson{background:#fff;border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-.queson-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;margin-top:12px}
-@media(max-width:820px){.queson-grid{grid-template-columns:1fr}}
-.queson-texto p{margin-top:18px;opacity:.85;max-width:56ch}
-.dato{border:1.5px solid var(--linea);border-radius:18px;padding:28px 26px;background:var(--papel)}
-.dato + .dato{margin-top:16px}
-.dato .num{font-family:var(--display);font-weight:700;font-size:2.6rem;line-height:1;color:var(--brote)}
-.dato.d-morado .num{color:var(--rabano)}
-.dato p{font-size:.95rem;margin-top:8px;opacity:.82}
-.dato small{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.55;display:block;margin-top:10px}
+.semana{display:grid;grid-template-columns:repeat(7,minmax(38px,1fr));gap:6px;list-style:none;max-width:520px;margin-top:28px}
+.semana li{border:1px solid var(--linea);background:var(--papel);border-radius:6px;text-align:center;padding:10px 2px 8px;max-width:none}
+.semana abbr{display:block;text-decoration:none;font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.2}
+.semana small{display:block;min-height:1.3em;font-size:.76rem;color:var(--tinta-2)}
+.semana .si{background:var(--brote);border-color:var(--brote)}
+.semana .alt{background:var(--rabano);border-color:var(--rabano)}
+.semana .si abbr,.semana .si small,.semana .alt abbr,.semana .alt small{color:#fff}
 
-/* variedades */
-.grid-var{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:48px}
-.card-var{border:1.5px solid var(--linea);border-radius:18px;overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}
-.card-var:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(23,48,28,.1)}
-.card-var .franja{height:9px}
-.card-var .cuerpo{padding:24px 22px 26px}
-.card-var h3{font-family:var(--display);font-weight:600;font-size:1.35rem;margin-bottom:6px}
-.card-var .sabor{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-.card-var p{font-size:.94rem;opacity:.82}
-.card-var .ficha{margin-top:14px;padding-top:12px;border-top:1px dashed var(--linea);font-size:.85rem;opacity:.75}
-.v-guisante .franja{background:var(--brote)} .v-guisante .sabor{color:var(--brote)}
-.v-girasol .franja{background:var(--girasol)} .v-girasol .sabor{color:#9a7c1c}
-.v-brocoli .franja{background:#6FA35C} .v-brocoli .sabor{color:#557f45}
-.v-rabano .franja{background:var(--rabano)} .v-rabano .sabor{color:var(--rabano)}
-.card-var .icono{margin-bottom:14px}
+.dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media(max-width:860px){.dos{grid-template-columns:1fr;gap:36px}}
+.lista{list-style:none;margin-top:26px;display:grid;gap:12px}
+.lista li{position:relative;padding-left:26px}
+.lista li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--brote)}
 
-/* ciclo 13 días */
-.ciclo .pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin-top:52px;border-top:2px solid var(--tinta)}
-.paso{padding:28px 22px 8px;border-left:1px dashed var(--linea);position:relative}
-.paso:first-child{border-left:none}
-.paso .dia{font-family:var(--mono);font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--brote);text-transform:uppercase}
-.paso h3{font-family:var(--display);font-size:1.3rem;font-weight:600;margin:10px 0 8px}
-.paso p{font-size:.93rem;opacity:.8}
-.paso::before{content:'';position:absolute;top:-7px;left:22px;width:12px;height:12px;border-radius:50%;background:var(--brote);border:3px solid var(--papel)}
-.paso:last-child::before{background:var(--rabano)}
-@media(max-width:720px){.ciclo .pasos{border-top:none;border-left:2px solid var(--tinta)}.paso{border-left:none;padding-left:30px}.paso::before{top:32px;left:-7px}}
+.etiqueta-fig{max-width:380px;width:100%;margin:0 auto}
+.etiqueta{background:#fff;border:1px solid #CFCFC7;border-radius:3px;padding:16px 18px 18px;color:#000;box-shadow:0 2px 0 #E4E6DD}
+.et-cab{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:3px solid var(--rojo);padding-bottom:8px;margin-bottom:10px}
+.et-cab b{font-size:1.06rem}
+.et-cab span{font-size:.84rem}
+.et-prod{font-weight:700;font-size:1.08rem;margin-bottom:8px}
+.etiqueta dl{display:grid;grid-template-columns:auto 1fr;gap:3px 16px;font-size:.95rem}
+.etiqueta dt{color:#444}
+.etiqueta .lote{color:var(--rojo);font-weight:700;letter-spacing:.02em}
+.etiqueta-fig figcaption{margin-top:12px;font-size:.95rem;color:var(--tinta-2)}
 
-/* cómo se comen */
-.cocina{background:var(--tinta);color:var(--papel)}
-.cocina .eyebrow{color:#9ecb8f}
-.cocina .section-intro{opacity:.75}
-.regla{margin-top:34px;border:1.5px dashed rgba(247,249,242,.4);border-radius:16px;padding:22px 26px;max-width:640px;font-family:var(--display);font-style:italic;font-size:1.25rem;line-height:1.45}
-.regla strong{color:#9ecb8f;font-style:normal}
-.grid-recetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px}
-.receta{border:1px solid rgba(247,249,242,.25);border-radius:16px;padding:24px 22px}
-.receta .paso-r{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#9ecb8f}
-.receta h3{font-family:var(--display);font-weight:600;font-size:1.25rem;margin:10px 0 8px}
-.receta p{font-size:.93rem;opacity:.8}
+.oscura{background:var(--tinta);color:#E4EBDC}
+.oscura h2,.oscura h3{color:#fff}
+.oscura .entrada{color:#C9D7C1}
+.oscura a{color:#fff}
 
-/* conservación */
-.conserva-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:12px}
-@media(max-width:820px){.conserva-grid{grid-template-columns:1fr}}
-.conserva ul{list-style:none;margin-top:26px;display:grid;gap:14px}
-.conserva ul li{display:flex;gap:14px;align-items:flex-start;font-size:.98rem}
-.conserva ul li::before{content:'—';color:var(--brote);font-weight:700;flex-shrink:0}
-.etiqueta{background:#fff;color:var(--tinta);border:1.5px solid var(--linea);border-radius:16px;padding:30px 30px 26px;box-shadow:0 18px 44px rgba(23,48,28,.12);transform:rotate(-1.4deg);max-width:400px;justify-self:center;width:100%}
-.etiqueta .cab{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--tinta);padding-bottom:12px;margin-bottom:16px}
-.etiqueta .cab strong{font-family:var(--display);font-size:1.15rem}
-.etiqueta .cab span{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em}
-.etiqueta dl{display:grid;grid-template-columns:auto 1fr;gap:7px 18px;font-size:.9rem}
-.etiqueta dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;opacity:.6;align-self:center}
-.etiqueta dd{font-weight:500}
-.etiqueta .lote{font-family:var(--mono)}
-.etiqueta .nota{margin-top:18px;padding-top:14px;border-top:1px dashed var(--linea);font-size:.82rem;opacity:.7}
+.pie{background:var(--tinta);color:#DCE6D3;padding:64px 0 40px}
+.pie a{color:#fff}
+.pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+@media(max-width:760px){.pie-grid{grid-template-columns:1fr}}
+.pie h2{font-size:1.15rem;color:#fff;margin-bottom:12px;max-width:none}
+.pie ul{list-style:none;display:grid;gap:6px}
+.pie .marca{color:#fff}
+.pie p{margin-top:12px;font-size:1rem}
+.pie .legal{margin-top:44px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem;color:#A9BBA3}
 
-/* preguntas */
-.faq details{border-bottom:1px solid var(--linea);padding:20px 4px}
-.faq details:first-of-type{border-top:2px solid var(--tinta);margin-top:44px}
-.faq summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:1.2rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+@media(max-width:600px){.bloque{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ===== Página general ===== */
+.hero{display:flex;flex-direction:column;justify-content:space-between;min-height:calc(100vh - 65px);min-height:calc(100svh - 65px)}
+.hero-texto{padding-top:clamp(36px,8vh,104px);padding-bottom:28px}
+.hero h1{font-size:clamp(3rem,9vw,6.6rem);font-weight:800;line-height:.98;letter-spacing:-.02em;max-width:12ch}
+.lede{margin-top:22px;font-size:clamp(1.12rem,1.9vw,1.32rem);color:var(--tinta-2);max-width:54ch}
+.mercado-linea{margin-top:18px;font-weight:700}
+.rutas{margin-top:6px;font-size:1.02rem;color:var(--tinta-2)}
+.bandeja{position:relative;flex:none;height:clamp(230px,36vh,380px);height:clamp(230px,36svh,380px)}
+#bosque{position:absolute;top:0;left:0;width:100%;height:100%}
+.corte-etiqueta{position:absolute;top:0;left:max(24px,calc((100% - 1120px)/2 + 24px));display:flex;align-items:center;gap:8px;max-width:min(360px,calc(100% - 48px));padding:6px 12px 6px 9px;background:var(--hoja);border:1px solid var(--rabano);border-radius:4px;color:var(--rabano);font-weight:700;font-size:.98rem;line-height:1.3;opacity:0}
+.corte-etiqueta.ver{opacity:1;transition:opacity .45s}
+.t{stroke-dasharray:1;stroke-dashoffset:1;animation:crece .95s cubic-bezier(.25,.8,.35,1) forwards}
+.h{transform:scale(0);animation:abre .5s cubic-bezier(.3,1.45,.5,1) forwards}
+.c{opacity:0;animation:aparece .12s linear forwards}
+@keyframes crece{to{stroke-dashoffset:0}}
+@keyframes abre{to{transform:scale(1)}}
+@keyframes aparece{to{opacity:1}}
+
+.que-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:56px;align-items:start}
+@media(max-width:860px){.que-grid{grid-template-columns:1fr;gap:28px}}
+.que-grid .entrada + p{margin-top:16px}
+.nota{border-left:4px solid var(--girasol);padding:4px 0 4px 20px;font-size:1.02rem}
+.nota strong{display:block;font-family:var(--serif);font-size:1.18rem;margin-bottom:6px}
+.nota .fuente{margin-top:10px;font-size:.9rem;color:var(--tinta-2)}
+.que-grid .nota{margin-top:10px}
+
+.herbario{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px}
+@media(max-width:1020px){.herbario{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.herbario{grid-template-columns:1fr}}
+.lamina{background:var(--papel);border:1px solid var(--linea);padding:18px 18px 20px;display:flex;flex-direction:column}
+.lamina svg{width:100%;height:auto;aspect-ratio:200/250}
+.rotulo{margin:14px 4px 4px;padding:12px 14px;background:#FFFEF8;border:1px solid var(--tinta);outline:1px solid var(--tinta);outline-offset:3px;font-size:.95rem;line-height:1.45}
+.rotulo .nom{display:block;font-family:var(--serif);font-weight:700;font-size:1.3rem;line-height:1.15}
+.rotulo .lat{display:block;font-family:var(--serif);font-style:italic;color:var(--tinta-2);margin-bottom:8px}
+.rotulo dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+.rotulo dt{color:var(--tinta-2)}
+.rotulo .curiosidad{margin-top:9px;padding-top:8px;border-top:1px dashed var(--linea);font-size:.9rem;color:var(--tinta-2)}
+.proximas{margin-top:26px;color:var(--tinta-2)}
+
+.ciclo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media(max-width:860px){.ciclo-grid{grid-template-columns:1fr;gap:32px}}
+#plantula{width:100%;height:auto;aspect-ratio:320/280;border:1px solid var(--linea);border-radius:8px}
+.control{margin-top:28px}
+.control label{display:block;font-family:var(--serif);font-weight:700;font-size:1.45rem}
+.control input[type=range]{display:block;width:100%;height:32px;margin-top:10px;accent-color:var(--brote);cursor:pointer}
+.cortes{position:relative;height:12px}
+.cortes span{position:absolute;top:0;left:calc(9px + (100% - 18px) * var(--f));width:2px;height:10px;margin-left:-1px;background:var(--rabano)}
+.leyenda-cortes{margin-top:8px;font-size:.95rem;color:var(--tinta-2)}
+.leyenda-cortes b{color:var(--rabano)}
+.fase{margin-top:22px;min-height:10.5em}
+.fase p{margin-top:6px}
+.fase .listo{font-weight:700;color:var(--rabano);min-height:1.6em}
+
+.ideas{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 48px;margin-top:40px}
+@media(max-width:760px){.ideas{grid-template-columns:1fr}}
+.ideas li{border-top:1px solid rgba(255,255,255,.22);padding-top:16px}
+.ideas p{margin-top:6px;color:#C9D7C1}
+.cantidad{margin-top:40px;font-family:var(--serif);font-size:1.32rem;color:#fff;max-width:40ch}
+
+.puntos{list-style:none;margin-top:30px;display:grid;gap:14px;max-width:720px}
+.puntos li{border-left:4px solid var(--brote);padding:2px 0 2px 18px}
+.puntos h3{font-size:1.22rem}
+.puntos p{margin-top:2px;color:var(--tinta-2)}
+.reserva{margin-top:18px}
+
+.faq{margin-top:32px;max-width:820px}
+.faq details{border-top:1px solid var(--linea);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--linea)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;list-style:none;font-family:var(--serif);font-weight:700;font-size:1.24rem}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';font-family:var(--mono);font-size:1.3rem;color:var(--brote);flex-shrink:0;transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(45deg);color:var(--rabano)}
-.faq details p{margin-top:12px;max-width:62ch;opacity:.82}
-@media(prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
-
-/* dónde vernos */
-.donde{background:#fff;border-top:1px solid var(--linea)}
-.donde p.section-intro{max-width:60ch}
-.donde .dias{font-family:var(--mono);font-size:.85rem;letter-spacing:.08em;margin-top:22px;color:var(--brote)}
-
-/* footer */
-footer.pie{border-top:1px solid var(--linea);padding:44px 24px}
-.pie .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
-.pie small{font-family:var(--mono);font-size:.75rem;opacity:.6}
-
-/* ---------- MÓVIL ---------- */
-@media(max-width:640px){
-  section{padding:56px 18px}
-  .hero{padding:44px 18px 150px;min-height:75vh}
-  .dato .num{font-size:2rem}
-  .etiqueta{transform:none;max-width:100%}
-  .regla{font-size:1.1rem;padding:18px 20px}
-  .faq summary{font-size:1.1rem}
-  .faq details p{max-width:100%}
-}
+.faq summary::after{content:"";flex-shrink:0;width:11px;height:11px;margin-right:4px;border-right:2px solid var(--brote);border-bottom:2px solid var(--brote);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(225deg)}
+.faq details p{margin-top:10px;color:var(--tinta-2)}
 </style>
 </head>
 <body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
 
-<nav aria-label="Principal">
-  <a class="logo" href="#top">
-    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.5" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
-    Germinados Muñiz
-  </a>
-  <ul class="nav-links">
-    <li><a href="#queson">Qué son</a></li>
-    <li><a href="#variedades">Variedades</a></li>
-    <li><a href="recetas.html">Recetas</a></li>
-    <li><a href="#cultivo">Cómo se cultivan</a></li>
-    <li><a href="#cocina">Cómo se comen</a></li>
-    <li><a href="#preguntas">Preguntas</a></li>
-  </ul>
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
+    <a class="marca" href="index.html" aria-label="Germinados Muñiz, inicio">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.4" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
+      <span>Germinados Muñiz</span>
+    </a>
+    <ul class="menu">
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
+      <li><a href="restaurantes.html">Restaurantes</a></li>
+      <li><a href="fruterias.html">Fruterías</a></li>
+    </ul>
+  </div>
 </nav>
 
-<header class="hero" id="top">
-  <div class="hero-inner">
-    <span class="hero-tag">Grado · Asturias</span>
-    <h1>Plantas diminutas. <em>Nutrición enorme.</em></h1>
-    <p class="lede">Los microgreens son brotes tiernos de plantas comestibles, recolectados a los pocos días de nacer, justo cuando concentran el máximo de vitaminas y sabor. Esta página es para que los conozcas: qué son, cómo se cultivan en Grado y cómo sacarles partido en tu cocina.</p>
-    <a class="hero-scroll" href="#queson">Empieza por aquí ↓</a>
+<header class="hero">
+  <div class="wrap hero-texto">
+    <h1>Microgreens de Grado.</h1>
+    <p class="lede">Guisante, girasol, brócoli y rábano rojo cosechados entre los 7 y los 12 días de sembrarlos, cuando la planta acaba de abrir sus primeras hojas. Se cortan a mano por el tallo: al plato solo llega la parte verde.</p>
+    <p class="mercado-linea">Los martes, viernes y domingos, en el mercado de Grado.</p>
+    <p class="rutas">¿Cocinas en un restaurante? <a href="restaurantes.html">Información para hostelería</a>. ¿Tienes una frutería? <a href="fruterias.html">Información para tiendas</a>.</p>
   </div>
-
-  <div class="sprouts" aria-hidden="true">
-    <svg viewBox="0 0 1200 190" preserveAspectRatio="xMidYMax slice">
-      <line class="soil" x1="0" y1="186" x2="1200" y2="186"/>
-      <g><path class="stem" style="stroke:#4C8C3F;animation-delay:.1s" d="M120 186 C118 140 124 110 118 78"/>
-        <path class="leaf" style="--ox:118px;--oy:78px;animation-delay:1.0s" d="M118 78C110 62 96 56 82 58c2 14 14 24 36 20Z" fill="#4C8C3F"/>
-        <path class="leaf" style="--ox:118px;--oy:78px;animation-delay:1.12s" d="M118 78c8-16 22-22 36-20-2 14-14 24-36 20Z" fill="#4C8C3F"/></g>
-      <g><path class="stem" style="stroke:#6FA35C;animation-delay:.3s" d="M240 186 C244 150 236 128 242 104"/>
-        <path class="leaf" style="--ox:242px;--oy:104px;animation-delay:1.2s" d="M242 104c-7-13-18-17-30-15 2 12 12 19 30 15Z" fill="#6FA35C"/>
-        <path class="leaf" style="--ox:242px;--oy:104px;animation-delay:1.3s" d="M242 104c7-13 18-17 30-15-2 12-12 19-30 15Z" fill="#6FA35C"/></g>
-      <g><path class="stem" style="stroke:#8E3B6B;animation-delay:.5s" d="M360 186 C356 138 366 104 358 66"/>
-        <path class="leaf" style="--ox:358px;--oy:66px;animation-delay:1.4s" d="M358 66c-9-16-24-22-38-19 3 15 16 25 38 19Z" fill="#4C8C3F"/>
-        <path class="leaf" style="--ox:358px;--oy:66px;animation-delay:1.52s" d="M358 66c9-16 24-22 38-19-3 15-16 25-38 19Z" fill="#4C8C3F"/></g>
-      <g><path class="stem" style="stroke:#C9A227;animation-delay:.65s" d="M470 186 C472 152 466 132 472 112"/>
-        <path class="leaf" style="--ox:472px;--oy:112px;animation-delay:1.5s" d="M472 112c-6-12-16-16-27-14 2 11 11 17 27 14Z" fill="#C9A227"/>
-        <path class="leaf" style="--ox:472px;--oy:112px;animation-delay:1.6s" d="M472 112c6-12 16-16 27-14-2 11-11 17-27 14Z" fill="#C9A227"/></g>
-      <g><path class="stem" style="stroke:#4C8C3F;animation-delay:.8s" d="M580 186 C584 142 574 112 582 82"/>
-        <path class="leaf" style="--ox:582px;--oy:82px;animation-delay:1.65s" d="M582 82c-8-15-21-20-35-18 3 14 15 23 35 18Z" fill="#4C8C3F"/>
-        <path class="leaf" style="--ox:582px;--oy:82px;animation-delay:1.77s" d="M582 82c8-15 21-20 35-18-3 14-15 23-35 18Z" fill="#4C8C3F"/></g>
-      <g><path class="stem" style="stroke:#8E3B6B;animation-delay:.95s" d="M700 186 C696 154 704 134 698 116"/>
-        <path class="leaf" style="--ox:698px;--oy:116px;animation-delay:1.8s" d="M698 116c-6-11-15-15-25-13 2 10 10 16 25 13Z" fill="#8E3B6B"/>
-        <path class="leaf" style="--ox:698px;--oy:116px;animation-delay:1.9s" d="M698 116c6-11 15-15 25-13-2 10-10 16-25 13Z" fill="#8E3B6B"/></g>
-      <g><path class="stem" style="stroke:#6FA35C;animation-delay:1.1s" d="M820 186 C822 144 814 116 822 90"/>
-        <path class="leaf" style="--ox:822px;--oy:90px;animation-delay:1.95s" d="M822 90c-8-14-20-19-33-17 3 13 14 22 33 17Z" fill="#6FA35C"/>
-        <path class="leaf" style="--ox:822px;--oy:90px;animation-delay:2.06s" d="M822 90c8-14 20-19 33-17-3 13-14 22-33 17Z" fill="#6FA35C"/></g>
-      <g><path class="stem" style="stroke:#C9A227;animation-delay:1.25s" d="M930 186 C926 156 934 138 928 122"/>
-        <path class="leaf" style="--ox:928px;--oy:122px;animation-delay:2.1s" d="M928 122c-5-10-14-14-23-12 2 9 9 15 23 12Z" fill="#C9A227"/>
-        <path class="leaf" style="--ox:928px;--oy:122px;animation-delay:2.2s" d="M928 122c5-10 14-14 23-12-2 9-9 15-23 12Z" fill="#C9A227"/></g>
-      <g><path class="stem" style="stroke:#4C8C3F;animation-delay:1.4s" d="M1050 186 C1054 146 1044 118 1052 88"/>
-        <path class="leaf" style="--ox:1052px;--oy:88px;animation-delay:2.25s" d="M1052 88c-8-15-21-20-35-18 3 14 15 23 35 18Z" fill="#4C8C3F"/>
-        <path class="leaf" style="--ox:1052px;--oy:88px;animation-delay:2.37s" d="M1052 88c8-15 21-20 35-18-3 14-15 23-35 18Z" fill="#4C8C3F"/></g>
-      <g><path class="stem" style="stroke:#8E3B6B;animation-delay:1.55s" d="M1160 186 C1156 152 1164 130 1158 108"/>
-        <path class="leaf" style="--ox:1158px;--oy:108px;animation-delay:2.4s" d="M1158 108c-6-12-16-16-27-14 2 11 11 17 27 14Z" fill="#8E3B6B"/>
-        <path class="leaf" style="--ox:1158px;--oy:108px;animation-delay:2.5s" d="M1158 108c6-12 16-16 27-14-2 11-11 17-27 14Z" fill="#8E3B6B"/></g>
-    </svg>
+  <div class="bandeja" aria-hidden="true">
+    <svg id="bosque" preserveAspectRatio="xMidYMax slice"></svg>
+    <p class="corte-etiqueta" id="corte-etiqueta"><svg width="19" height="16" viewBox="0 0 19 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="3.5" cy="3.5" r="3"/><circle cx="3.5" cy="12.5" r="3"/><path d="M6.3 5.1 17.5 11.6M6.3 10.9 17.5 4.4"/></svg>Aquí se corta. La raíz y la semilla se quedan en la bandeja.</p>
   </div>
 </header>
 
-<section class="queson" id="queson">
+<main id="contenido">
+
+<section class="bloque" id="que-son" aria-labelledby="t-que">
   <div class="wrap">
-    <p class="eyebrow">Qué son</p>
-    <h2>La misma planta que conoces, cogida en su mejor momento.</h2>
-    <div class="queson-grid">
-      <div class="queson-texto">
-        <p>Un microgreen es un brote joven de una planta comestible —guisante, girasol, brócoli, rábano…— que se recolecta entre los 7 y los 14 días de la siembra, cuando ya ha desarrollado sus primeras hojitas pero todavía no se ha convertido en planta adulta.</p>
-        <p>En esa etapa la planta concentra todos los nutrientes que necesitaría para crecer. Por eso, gramo a gramo, un microgreen puede tener muchas más vitaminas y minerales que la verdura madura de la misma especie.</p>
-        <p>No hay que confundirlos con los germinados de bote: los microgreens crecen sobre sustrato, con luz, y se cortan por el tallo. Ni raíz ni semilla llegan al plato — solo la parte verde y tierna.</p>
-      </div>
+    <div class="que-grid">
       <div>
-        <div class="dato">
-          <span class="num">4–40×</span>
-          <p>más concentración de vitaminas y minerales que la planta adulta, según los estudios publicados.</p>
-          <small>Gramo a gramo, frente a la verdura madura</small>
-        </div>
-        <div class="dato d-morado">
-          <span class="num">7–14</span>
-          <p>días desde la siembra hasta la recolección. Se comen crudos, en su momento de máxima frescura.</p>
-          <small>Ciclo de vida de un microgreen</small>
-        </div>
+        <h2 id="t-que">La planta de siempre, cortada en sus primeros días.</h2>
+        <p class="entrada">Un microgreen es una hortaliza o una hierba que se cosecha muy joven: cuando ya ha abierto sus primeras hojas, pero todavía no es una planta adulta.</p>
+        <p>Crece sobre sustrato y con luz, y se corta por el tallo, justo por encima de la base. Por eso no es un germinado: al plato no llegan ni la raíz ni la semilla, solo tallo y hoja. Y por eso sabe a su planta: el guisante sabe a guisante y el rábano, a rábano.</p>
       </div>
+      <aside class="nota" aria-label="Qué dice la investigación">
+        <strong>¿Por qué tanto interés?</strong>
+        <p>En 2012, investigadores del Departamento de Agricultura de Estados Unidos y de la Universidad de Maryland analizaron vitaminas y carotenoides en 25 variedades de microgreens. En general tenían más que la hoja adulta de la misma planta, aunque con grandes diferencias de una especie a otra.</p>
+        <p class="fuente">Xiao y otros, <i>Journal of Agricultural and Food Chemistry</i>, 2012.</p>
+      </aside>
+    </div>
+    <div class="tabla-caja">
+      <table>
+        <caption class="oculto">En qué se diferencian un germinado y un microgreen</caption>
+        <thead><tr><th scope="col"><span class="oculto">Aspecto</span></th><th scope="col">Germinado</th><th scope="col">Microgreen</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cómo crece</th><td>En agua o en ambiente húmedo</td><td>Sobre sustrato (aquí, fibra de coco) y con luz</td></tr>
+          <tr><th scope="row">Cuándo se cosecha</th><td>A los pocos días de germinar</td><td>Entre 7 y 12 días después de sembrar</td></tr>
+          <tr><th scope="row">Qué se come</th><td>Todo: semilla, raíz y brote</td><td>Tallo y primeras hojas</td></tr>
+          <tr><th scope="row">A qué sabe</th><td>Suave, a semilla</td><td>A la planta de la que viene</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<section id="variedades">
+<section class="bloque" id="variedades" aria-labelledby="t-var">
   <div class="wrap">
-    <p class="eyebrow">Las variedades</p>
-    <h2>Cuatro sabores, cuatro personalidades.</h2>
-    <p class="section-intro">Estas son las variedades que cultivamos actualmente. Cada una tiene su carácter: conocerlas te ayuda a elegir la que mejor le va a cada plato.</p>
-    <div class="grid-var">
-      <article class="card-var v-guisante">
-        <div class="franja"></div>
-        <div class="cuerpo">
-          <svg class="icono" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="11" cy="21" r="6" fill="#4C8C3F"/><circle cx="23" cy="21" r="6" fill="#4C8C3F" opacity=".7"/><circle cx="17" cy="11" r="6" fill="#4C8C3F" opacity=".5"/></svg>
-          <h3>Guisante</h3>
-          <p class="sabor">Dulce · fresco</p>
-          <p>Brotes finos de unos 8 cm que saben a guisante tierno recién pelado.</p>
-          <p class="ficha">Va bien con: ensaladas, pastas frías, pescados suaves.</p>
-        </div>
-      </article>
-      <article class="card-var v-girasol">
-        <div class="franja"></div>
-        <div class="cuerpo">
-          <svg class="icono" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="5" fill="#8a6d15"/><g fill="#C9A227"><ellipse cx="17" cy="6" rx="3.4" ry="6"/><ellipse cx="17" cy="28" rx="3.4" ry="6"/><ellipse cx="6" cy="17" rx="6" ry="3.4"/><ellipse cx="28" cy="17" rx="6" ry="3.4"/></g></svg>
-          <h3>Girasol</h3>
-          <p class="sabor">Frutos secos · crujiente</p>
-          <p>Verde intenso, textura crujiente y un punto a nuez que sorprende.</p>
-          <p class="ficha">Va bien con: bocadillos, tostadas, quesos, huevos.</p>
-        </div>
-      </article>
-      <article class="card-var v-brocoli">
-        <div class="franja"></div>
-        <div class="cuerpo">
-          <svg class="icono" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="15" y="18" width="4" height="11" rx="2" fill="#557f45"/><circle cx="12" cy="14" r="6" fill="#6FA35C"/><circle cx="22" cy="14" r="6" fill="#6FA35C"/><circle cx="17" cy="9" r="6" fill="#6FA35C"/></svg>
-          <h3>Brócoli</h3>
-          <p class="sabor">Suave · muy sano</p>
-          <p>Sabor delicado y todas las propiedades del brócoli en versión mini. Perfecto para empezar y para los niños.</p>
-          <p class="ficha">Va bien con: cremas, arroces, cualquier plato del día a día.</p>
-        </div>
-      </article>
-      <article class="card-var v-rabano">
-        <div class="franja"></div>
-        <div class="cuerpo">
-          <svg class="icono" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="M17 29V15" stroke="#8E3B6B" stroke-width="3" stroke-linecap="round"/><path d="M17 16c-2-8-9-11-14-10 1 8 8 12 14 10Z" fill="#8E3B6B"/><path d="M17 16c2-8 9-11 14-10-1 8-8 12-14 10Z" fill="#4C8C3F"/></svg>
-          <h3>Rábano rojo</h3>
-          <p class="sabor">Picante suave · morado</p>
-          <p>Tallos morados y una chispa picante que despierta cualquier plato. El más llamativo de los cuatro.</p>
-          <p class="ficha">Va bien con: aguacate, huevos, platos que piden color.</p>
-        </div>
-      </article>
+    <h2 id="t-var">Cuatro variedades, cada una con su carácter.</h2>
+    <p class="entrada">Dibujadas a escala: la barra de cada lámina mide un centímetro.</p>
+    <div class="herbario">
+      <figure class="lamina">
+        <svg class="especimen" data-var="guisante" viewBox="0 0 200 250" role="img" aria-label="Dibujo a escala de microgreens de guisante, de unos 9 centímetros"></svg>
+        <figcaption class="rotulo">
+          <span class="nom">Guisante</span><span class="lat">Pisum sativum</span>
+          <dl><dt>Familia</dt><dd>Leguminosas</dd><dt>Corte</dt><dd>hacia el día 12</dd><dt>Sabor</dt><dd>dulce, a guisante tierno</dd><dt>Va con</dt><dd>ensaladas, pasta fría, pescado</dd></dl>
+          <p class="curiosidad">Lo que ves ya son hojas verdaderas: los cotiledones del guisante se quedan dentro de la semilla.</p>
+        </figcaption>
+      </figure>
+      <figure class="lamina">
+        <svg class="especimen" data-var="girasol" viewBox="0 0 200 250" role="img" aria-label="Dibujo a escala de microgreens de girasol, de unos 8 centímetros"></svg>
+        <figcaption class="rotulo">
+          <span class="nom">Girasol</span><span class="lat">Helianthus annuus</span>
+          <dl><dt>Familia</dt><dd>Compuestas</dd><dt>Corte</dt><dd>hacia el día 11</dd><dt>Sabor</dt><dd>a fruto seco, jugoso</dd><dt>Va con</dt><dd>tostadas, quesos, huevo</dd></dl>
+          <p class="curiosidad">Esas dos hojas carnosas son los cotiledones: la reserva de la pipa, ya en verde.</p>
+        </figcaption>
+      </figure>
+      <figure class="lamina">
+        <svg class="especimen" data-var="brocoli" viewBox="0 0 200 250" role="img" aria-label="Dibujo a escala de microgreens de brócoli, de unos 4,5 centímetros"></svg>
+        <figcaption class="rotulo">
+          <span class="nom">Brócoli</span><span class="lat">Brassica oleracea var. italica</span>
+          <dl><dt>Familia</dt><dd>Crucíferas</dd><dt>Corte</dt><dd>hacia el día 10</dd><dt>Sabor</dt><dd>suave y fresco</dd><dt>Va con</dt><dd>cremas espesas, arroces, carnes blancas</dd></dl>
+          <p class="curiosidad">Sus hojitas en forma de corazón son las de toda la familia de la col.</p>
+        </figcaption>
+      </figure>
+      <figure class="lamina">
+        <svg class="especimen" data-var="rabano" viewBox="0 0 200 250" role="img" aria-label="Dibujo a escala de microgreens de rábano rojo, de unos 6 centímetros"></svg>
+        <figcaption class="rotulo">
+          <span class="nom">Rábano rojo</span><span class="lat">Raphanus sativus</span>
+          <dl><dt>Familia</dt><dd>Crucíferas</dd><dt>Corte</dt><dd>hacia el día 7</dd><dt>Sabor</dt><dd>picante suave, crujiente</dd><dt>Va con</dt><dd>aguacate, huevo, pescado crudo</dd></dl>
+          <p class="curiosidad">El morado del tallo es el color natural de la variedad. Es la más rápida de las cuatro.</p>
+        </figcaption>
+      </figure>
     </div>
+    <p class="proximas">Irán llegando más: mostaza, rúcula, col lombarda, remolacha y amaranto.</p>
   </div>
 </section>
 
-<section class="ciclo" id="cultivo">
-  <div class="wrap">
-    <p class="eyebrow">Cómo se cultivan</p>
-    <h2>Trece días en un pajar de piedra de Grado.</h2>
-    <p class="section-intro">Cultivamos en un pajar rehabilitado a las afueras de Grado, sobre fibra de coco, sin pesticidas ni productos químicos. Cada bandeja lleva su código de lote, así que siempre sabemos el día exacto en que nació cada brote.</p>
-    <div class="pasos">
-      <div class="paso">
-        <span class="dia">Día 1</span>
-        <h3>Siembra</h3>
-        <p>Las semillas se extienden sobre el sustrato de fibra de coco y germinan apretadas, bajo peso.</p>
+<section class="bloque papel" id="ciclo" aria-labelledby="t-ciclo">
+  <div class="wrap ciclo-grid">
+    <div>
+      <h2 id="t-ciclo">De la semilla al plato en menos de dos semanas.</h2>
+      <p class="entrada">Mueve el control para ver cómo crece una bandeja de guisante en el pajar, día a día.</p>
+      <div class="control">
+        <label for="dia">Día <output id="dia-num" for="dia">7</output> de 12</label>
+        <input type="range" id="dia" min="1" max="12" step="1" value="7">
+        <div class="cortes" aria-hidden="true"><span style="--f:.5455"></span><span style="--f:.8182"></span><span style="--f:.9091"></span><span style="--f:1"></span></div>
+        <p class="leyenda-cortes"><b>Días de corte:</b> el rábano rojo, hacia el 7; el brócoli, el 10; el girasol, el 11, y el guisante, el 12.</p>
       </div>
-      <div class="paso">
-        <span class="dia">Días 2–5</span>
-        <h3>Oscuridad</h3>
-        <p>Germinación a oscuras, con humedad controlada. Aquí el brote echa raíz y coge fuerza.</p>
-      </div>
-      <div class="paso">
-        <span class="dia">Días 5–12</span>
-        <h3>Luz</h3>
-        <p>Las bandejas pasan a la luz. Los brotes verdean y crecen rápido, regados siempre desde abajo para no mojar las hojas.</p>
-      </div>
-      <div class="paso">
-        <span class="dia">Día 13</span>
-        <h3>Cosecha y frío</h3>
-        <p>Corte con tijera, enjuague en agua fría, envasado con etiqueta de lote y directo a la nevera. Frescura de horas, no de días.</p>
+      <div class="fase" aria-live="polite">
+        <h3 id="fase-tit">Crecer</h3>
+        <p id="fase-txt">Se riega por abajo, desde una bandeja con agua, para no mojar las hojas.</p>
+        <p class="listo" id="fase-listo"></p>
       </div>
     </div>
+    <svg id="plantula" viewBox="0 0 320 280" role="img" aria-label="Dibujo de una plántula de guisante en el día seleccionado"></svg>
   </div>
 </section>
 
-<section class="cocina" id="cocina">
+<section class="bloque oscura" id="cocina" aria-labelledby="t-cocina">
   <div class="wrap">
-    <p class="eyebrow">Cómo se comen</p>
-    <h2>No hace falta ser cocinillas.</h2>
-    <p class="section-intro">Los microgreens no se cocinan: se añaden al plato ya hecho, como un toque final de sabor, color y vitaminas. Cuatro ideas para empezar, válidas para cualquiera de las variedades.</p>
-    <p class="regla">La regla de oro: siempre <strong>crudos</strong> y siempre <strong>al final</strong>, justo antes de comer. El calor los chafa y se pierden las vitaminas.</p>
-    <div class="grid-recetas">
-      <div class="receta">
-        <span class="paso-r">La más fácil</span>
-        <h3>Tostada con aguacate</h3>
-        <p>Pan tostado, aguacate machacado, un puñadito de brotes, sal y un chorrito de aceite. Dos minutos.</p>
-      </div>
-      <div class="receta">
-        <span class="paso-r">La de diario</span>
-        <h3>Sobre la ensalada</h3>
-        <p>Un buen puñado por encima de la ensalada de siempre, justo antes de servir. Sabor, color y vitaminas sin cambiar nada más.</p>
-      </div>
-      <div class="receta">
-        <span class="paso-r">La sorpresa</span>
-        <h3>Huevo con brotes</h3>
-        <p>Huevo frito, a la plancha o revuelto, y los brotes por encima. El calor del huevo los entibia y quedan riquísimos.</p>
-      </div>
-      <div class="receta">
-        <span class="paso-r">El toque de restaurante</span>
-        <h3>Sobre cremas de verdura</h3>
-        <p>Calabacín, calabaza, puerro… espolvorea unos brotes al servir y la crema de toda la vida sube de nivel.</p>
-      </div>
-    </div>
+    <h2 id="t-cocina">Crudos y al final. No hay más secreto.</h2>
+    <p class="entrada">Se añaden sobre el plato ya terminado, justo antes de comer. No hace falta cocinarlos ni trocearlos.</p>
+    <ul class="ideas">
+      <li><h3>Tostada con aguacate</h3><p>Pan tostado, aguacate, sal, un hilo de aceite y un puñado de brotes. Con rábano pica un poco; con guisante queda dulce.</p></li>
+      <li><h3>Encima de la ensalada</h3><p>Un buen puñado sobre la ensalada de siempre, al servir. Aportan color y un crujiente que la lechuga no tiene.</p></li>
+      <li><h3>Con huevo</h3><p>Frito, a la plancha o revuelto, con los brotes por encima ya en el plato. El girasol es el que mejor aguanta el calor.</p></li>
+      <li><h3>Sobre una crema de verdura</h3><p>Calabaza, calabacín, puerro… Sobre una crema espesa aguantan bien; en una sopa o un caldo caliente, en cambio, se marchitan al momento.</p></li>
+    </ul>
+    <p class="cantidad">¿Cuánto? Desde unos pocos brotes para adornar hasta unos 10 gramos si van en una ensalada.</p>
   </div>
 </section>
 
-<section class="conserva" id="conservacion">
-  <div class="wrap">
-    <p class="eyebrow">Conservación</p>
-    <h2>Cómo cuidarlos en casa.</h2>
-    <div class="conserva-grid">
-      <div>
-        <ul>
-          <li>Guárdalos en la nevera nada más llegar a casa, entre 2 y 4 °C — la balda media o baja es la mejor.</li>
-          <li>Sin abrir aguantan 5 o 6 días. Una vez abiertos, ciérralos bien y consúmelos en pocos días.</li>
-          <li>No se congelan: son producto fresco y pierden textura y vitaminas.</li>
-          <li>No hace falta lavarlos: se enjuagan en agua fría en el momento de la cosecha.</li>
-          <li>Si notas hojas amarillentas u olor a hierba muy mojada, es señal de que ya han pasado su momento.</li>
-        </ul>
-      </div>
-      <div class="etiqueta" role="img" aria-label="Ejemplo de etiqueta: microgreens de guisante, lote T1-GU-140726, cosechado el 14 de julio, consumir antes del 20 de julio, conservar en nevera entre 2 y 4 grados">
-        <div class="cab"><strong>Germinados Muñiz</strong><span>GRADO · AST</span></div>
+<section class="bloque" id="conservar" aria-labelledby="t-conservar">
+  <div class="wrap dos">
+    <div>
+      <h2 id="t-conservar">En la nevera, en su tarrina y sin mojar.</h2>
+      <ul class="lista">
+        <li>Guárdalos en la nevera en cuanto llegues a casa, entre 2 y 4 °C.</li>
+        <li>Déjalos en su tarrina, bien cerrada: al aire se secan antes.</li>
+        <li>Si los lavas, que sea justo antes de comerlos, y sécalos bien. Guardados húmedos duran menos.</li>
+        <li>No se congelan: al descongelarse quedan blandos.</li>
+        <li>Tallos blandos, hojas amarillas u olor fuerte: ya han pasado su momento.</li>
+      </ul>
+    </div>
+    <figure class="etiqueta-fig">
+      <div class="etiqueta" role="img" aria-label="Ejemplo de etiqueta: microgreens de guisante, lote T2-GU-240926, cosecha el 24 de septiembre de 2026, consumir antes del 30 de septiembre de 2026, conservar en nevera de 2 a 4 grados.">
+        <div class="et-cab"><b>Germinados Muñiz</b><span>Grado (Asturias)</span></div>
+        <p class="et-prod">Microgreens de guisante</p>
         <dl>
-          <dt>Producto</dt><dd>Microgreens de guisante</dd>
-          <dt>Lote</dt><dd class="lote">T1-GU-140726</dd>
-          <dt>Cosecha</dt><dd class="lote">14 · 07 · 2026</dd>
-          <dt>Consumir antes</dt><dd class="lote">20 · 07 · 2026</dd>
-          <dt>Conservación</dt><dd>Nevera, 2–4 °C</dd>
+          <dt>Lote</dt><dd class="lote">T2-GU-240926</dd>
+          <dt>Cosecha</dt><dd>24/09/2026</dd>
+          <dt>Consumir antes de</dt><dd>30/09/2026</dd>
+          <dt>Conservar</dt><dd>En nevera, de 2 a 4 °C</dd>
         </dl>
-        <p class="nota">Cada tarrina lleva esta etiqueta. La fecha de cosecha y el lote te dicen exactamente cuándo nació lo que tienes en la mano.</p>
       </div>
+      <figcaption>Ejemplo de etiqueta. Cada tarrina lleva su lote, el día de la cosecha y la fecha de consumo, seis días después.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="bloque papel" id="donde" aria-labelledby="t-donde">
+  <div class="wrap">
+    <h2 id="t-donde">Dónde encontrarlos.</h2>
+    <ol class="semana" aria-label="Días de mercado: martes, viernes y domingo">
+      <li><abbr title="lunes">L</abbr><small></small></li>
+      <li class="si"><abbr title="martes">M</abbr><small>mercado</small></li>
+      <li><abbr title="miércoles">X</abbr><small></small></li>
+      <li><abbr title="jueves">J</abbr><small></small></li>
+      <li class="si"><abbr title="viernes">V</abbr><small>mercado</small></li>
+      <li><abbr title="sábado">S</abbr><small></small></li>
+      <li class="si"><abbr title="domingo">D</abbr><small>mercado</small></li>
+    </ol>
+    <ul class="puntos">
+      <li>
+        <h3>Mercado de Grado</h3>
+        <p>Martes, viernes y domingo. Pregunta en el puesto por las tarrinas de Germinados Muñiz.</p>
+      </li>
+      <!-- Cuando una frutería empiece a venderlos, añádela aquí:
+      <li>
+        <h3>Nombre de la frutería</h3>
+        <p>Calle y número, Grado</p>
+      </li>
+      -->
+    </ul>
+    <p class="reserva">¿Hay una frutería donde te gustaría encontrarlos? Díselo: toda la información para tiendas está en <a href="fruterias.html">esta página</a>.</p>
+  </div>
+</section>
+
+<section class="bloque" id="preguntas" aria-labelledby="t-faq">
+  <div class="wrap">
+    <h2 id="t-faq">Lo que más se pregunta en el puesto.</h2>
+    <div class="faq">
+      <details><summary>¿Son lo mismo que los germinados?</summary><p>No. El germinado crece en agua y se come entero, con semilla y raíz. El microgreen crece más días, sobre sustrato y con luz, y se corta por el tallo: solo se come la parte verde.</p></details>
+      <details><summary>¿Son ecológicos?</summary><p>No tienen sello ecológico, así que no los llamo así. Se cultivan sin pesticidas, con semilla, fibra de coco, agua y luz.</p></details>
+      <details><summary>¿A qué saben?</summary><p>A la planta de la que vienen. El guisante es dulce, el girasol recuerda a un fruto seco, el brócoli es suave y el rábano pica un poco.</p></details>
+      <details><summary>¿Los pueden comer los niños?</summary><p>Sí, son verdura. Para empezar, mejor el guisante o el brócoli, que son los más suaves.</p></details>
+      <details><summary>¿Se pueden cocinar?</summary><p>Mejor no: son hoja tierna. Se comen crudos, añadidos justo al servir, también sobre platos calientes.</p></details>
+      <details><summary>¿Cuánto duran?</summary><p>Hasta la fecha de la etiqueta: seis días desde la cosecha, siempre en la nevera.</p></details>
+      <details><summary>¿Se pueden congelar?</summary><p>No. Son casi todo agua y al descongelarse quedan blandos.</p></details>
     </div>
   </div>
 </section>
 
-<section class="faq" id="preguntas">
-  <div class="wrap">
-    <p class="eyebrow">Preguntas frecuentes</p>
-    <h2>Lo que más nos preguntan.</h2>
-    <details>
-      <summary>¿Son ecológicos?</summary>
-      <p>Las semillas son de origen ecológico certificado y el cultivo es natural: sin pesticidas ni productos químicos, solo agua, luz y fibra de coco. Todavía no tenemos el sello de certificación oficial, pero se cultivan como se haría en casa.</p>
-    </details>
-    <details>
-      <summary>¿Microgreens y germinados son lo mismo?</summary>
-      <p>No. Los germinados se cultivan en agua y se comen enteros, con raíz y semilla. Los microgreens crecen sobre sustrato, con luz, durante más días, y solo se corta y se come la parte verde. Por eso desarrollan más sabor, más color y más hoja.</p>
-    </details>
-    <details>
-      <summary>¿Valen para niños?</summary>
-      <p>Sí, son estupendos para ellos: mucha vitamina natural y sabores suaves. Para empezar, el guisante o el brócoli son los más amables. El rábano pica un poquito, como una rúcula suave.</p>
-    </details>
-    <details>
-      <summary>¿Se pueden cocinar?</summary>
-      <p>Mejor no. El calor los ablanda y destruye buena parte de sus vitaminas. Lo suyo es añadirlos crudos sobre el plato ya terminado — incluso sobre platos calientes, siempre en el último momento.</p>
-    </details>
-    <details>
-      <summary>¿Cuánto duran?</summary>
-      <p>Cinco o seis días en la nevera sin abrir. La fecha exacta de consumo va en la etiqueta de cada tarrina, junto con la fecha de cosecha y el código de lote.</p>
-    </details>
-    <details>
-      <summary>¿Por qué no se congelan?</summary>
-      <p>Porque son casi todo agua y hoja tierna: al congelarse y descongelarse pierden la textura crujiente y buena parte de las vitaminas. Son un producto para disfrutar fresco.</p>
-    </details>
-  </div>
-</section>
-
-<section class="donde" id="donde">
-  <div class="wrap">
-    <p class="eyebrow">Quiénes somos</p>
-    <h2>Un proyecto pequeño, de Grado y hecho a mano.</h2>
-    <p class="section-intro">Germinados Muñiz es un proyecto artesanal de Carlos Muñiz. Todo se cultiva, cosecha y envasa a pocos kilómetros del centro de Grado. Si quieres verlos y probarlos en persona, estamos en el mercado de Grado.</p>
-    <p class="dias">Mercado de Grado — martes · viernes · domingo</p>
-  </div>
-</section>
+</main>
 
 <footer class="pie">
   <div class="wrap">
-    <a class="logo" href="#top">
-      <svg width="22" height="22" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.5" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
-      Germinados Muñiz
-    </a>
-    <small>Producción artesanal · Grado, Asturias · Sin pesticidas · Trazabilidad por lote</small>
+    <div class="pie-grid">
+      <div>
+        <a class="marca" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#7DBB6B"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#C77BA6"/></svg><span>Germinados Muñiz</span></a>
+        <p>Microgreens cultivados y cortados a mano en Grado (Asturias) por Carlos Muñiz.</p>
+      </div>
+      <div>
+        <h2>Páginas</h2>
+        <ul>
+          <li><a href="index.html">Qué son los microgreens</a></li>
+          <li><a href="restaurantes.html">Para restaurantes</a></li>
+          <li><a href="fruterias.html">Para fruterías</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li>Mercado de Grado: martes, viernes y domingo</li>
+          <li><a href="https://www.instagram.com/germinadosmuniz/">Instagram: @germinadosmuniz</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© 2026 Germinados Muñiz. Grado, Asturias.</p>
   </div>
 </footer>
 
+<script>
+(function () {
+'use strict';
+/*GEN-INICIO*/
+function rng(semilla) {
+  return function () {
+    semilla = (semilla + 0x6D2B79F5) | 0;
+    let t = Math.imul(semilla ^ (semilla >>> 15), 1 | semilla);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const f1 = n => Math.round(n * 10) / 10;
+function mezcla(a, b, t) {
+  const pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+  const c = (s) => Math.round(((pa >> s) & 255) + (((pb >> s) & 255) - ((pa >> s) & 255)) * t);
+  return '#' + ((1 << 24) | (c(16) << 16) | (c(8) << 8) | c(0)).toString(16).slice(1);
+}
+const FORMA = {
+  corazon: s => `M0,0 C${f1(s*.28)},${f1(-s*.58)} ${f1(s*.92)},${f1(-s*.62)} ${f1(s*1.02)},${f1(-s*.14)} L${f1(s*.86)},0 L${f1(s*1.02)},${f1(s*.14)} C${f1(s*.92)},${f1(s*.62)} ${f1(s*.28)},${f1(s*.58)} 0,0Z`,
+  oval: s => `M0,0 C${f1(s*.22)},${f1(-s*.4)} ${f1(s*.86)},${f1(-s*.44)} ${f1(s*1.06)},0 C${f1(s*.86)},${f1(s*.44)} ${f1(s*.22)},${f1(s*.4)} 0,0Z`,
+  foliolo: s => `M0,0 C${f1(s*.18)},${f1(-s*.5)} ${f1(s*.8)},${f1(-s*.52)} ${f1(s*.98)},${f1(-s*.04)} C${f1(s*.8)},${f1(s*.44)} ${f1(s*.2)},${f1(s*.42)} 0,0Z`
+};
+const hoja = (forma, x, y, s, ang, color) =>
+  `<path d="${FORMA[forma](s)}" transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(ang)})" fill="${color}"/>`;
+const nervio = (x, y, s, ang, color) =>
+  `<path d="M0,0 L${f1(s*.82)},0" transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(ang)})" stroke="${color}" stroke-width=".7" opacity=".5" fill="none"/>`;
+function bez(p, u) {
+  const m = 1 - u;
+  return { x: m*m*m*p[0] + 3*m*m*u*p[2] + 3*m*u*u*p[4] + u*u*u*p[6],
+           y: m*m*m*p[1] + 3*m*m*u*p[3] + 3*m*u*u*p[5] + u*u*u*p[7] };
+}
+const TIJERA = (x, y, c) =>
+  `<g transform="translate(${x} ${y})" fill="none" stroke="${c}" stroke-width="1.7" stroke-linecap="round"><circle cx="3.5" cy="3.5" r="3"/><circle cx="3.5" cy="12.5" r="3"/><path d="M6.3 5.1 17.5 11.6M6.3 10.9 17.5 4.4"/></g>`;
+
+const VARS = {
+  guisante: { tallo:'#8DBA6A', hoja:'#4C8C3F', hoja2:'#3F7A35', forma:'foliolo', grosor:2.2, tam:[7,10], alto:1 },
+  girasol:  { tallo:'#CADDA9', hoja:'#5E9A3A', hoja2:'#4E8A30', forma:'oval',    grosor:3.1, tam:[11,15], alto:.95 },
+  brocoli:  { tallo:'#B9D49C', hoja:'#3F7F3A', hoja2:'#35702F', forma:'corazon', grosor:1.6, tam:[6,8],  alto:.74 },
+  rabano:   { tallo:'#8E3B6B', hoja:'#5E8C3F', hoja2:'#7A3A5E', forma:'corazon', grosor:1.8, tam:[7,9],  alto:.84 }
+};
+const TONOS_COCO = ['#795535', '#9C774E', '#6A4A2D', '#A8845B'];
+
+/* Corte de bandeja del inicio: fibra de coco, raíces, tallos y la línea de corte */
+function bosque(W, H, animar) {
+  const r = rng(20260928);
+  const base = Math.round(H * .8), corte = Math.round(H * .7);
+  const orden = ['guisante', 'girasol', 'brocoli', 'rabano'];
+  let fondo = `<rect x="0" y="${base}" width="${W}" height="${H - base}" fill="#8A6440"/>`;
+  const nf = Math.round(W * (H - base) / 110);
+  for (let i = 0; i < nf; i++) {
+    const x = r() * W, y = base + 5 + r() * (H - base - 14), l = 3 + r() * 7, a = r() * Math.PI;
+    fondo += `<line x1="${f1(x)}" y1="${f1(y)}" x2="${f1(x + Math.cos(a) * l)}" y2="${f1(y + Math.sin(a) * l)}" stroke="${TONOS_COCO[Math.floor(r() * 4)]}" stroke-width="1.2" stroke-linecap="round"/>`;
+  }
+  fondo += `<rect x="0" y="${H - 7}" width="${W}" height="7" fill="#17301C"/>`;
+
+  const paso = W < 700 ? 3.7 : 4.3, n = Math.floor(W / paso), tallos = [];
+  for (let i = 0; i < n; i++) {
+    const x = i * paso + r() * paso;
+    let z = x / W * 4 + (r() - .5) * .5;
+    z = Math.min(3.99, Math.max(0, z));
+    const k = orden[Math.floor(z)], v = VARS[k];
+    const alto = (H * .4 + r() * H * .22) * v.alto;
+    tallos.push({ x, k, v, top: Math.max(H * .13, base - alto), prof: r(), sw: (r() - .5) * 10,
+      xt: x + (r() - .5) * 16, g: v.grosor * (.8 + r() * .4), s: (v.tam[0] + r() * (v.tam[1] - v.tam[0])) * (v.forma === 'corazon' ? 1.28 : 1.1),
+      aL: -150 + (r() - .5) * 34, aR: -30 + (r() - .5) * 34, e1: r(), e2: r(), delay: Math.round(r() * 650) });
+  }
+  tallos.sort((a, b) => a.prof - b.prof);
+
+  let raices = '', cuerpo = '', semillas = '';
+  for (const t of tallos) {
+    const osc = (1 - t.prof) * .28;
+    const cT = mezcla(t.v.tallo, '#17301C', osc), cH = mezcla(t.v.hoja, '#17301C', osc), cH2 = mezcla(t.v.hoja2, '#17301C', osc);
+    const p = [t.x, base, t.x + t.sw * .3, base - (base - t.top) * .35, t.xt + t.sw, base - (base - t.top) * .72, t.xt, t.top];
+    cuerpo += `<path d="M${f1(p[0])},${p[1]} C${f1(p[2])},${f1(p[3])} ${f1(p[4])},${f1(p[5])} ${f1(p[6])},${f1(p[7])}" fill="none" stroke="${cT}" stroke-width="${f1(t.g)}" stroke-linecap="round"${animar ? ` pathLength="1" class="t" style="animation-delay:${t.delay}ms"` : ''}/>`;
+    const segunda = t.k === 'rabano' ? (t.e1 < .35 ? cH2 : cH) : cH2;
+    let arriba = hoja(t.v.forma, t.xt, t.top, t.s, t.aL, cH) + hoja(t.v.forma, t.xt, t.top, t.s * .94, t.aR, segunda);
+    if (t.k === 'guisante') {
+      const q = bez(p, .62);
+      const bajo = hoja('foliolo', q.x, q.y, t.s * .72, -168 + t.e1 * 18, cH2) + hoja('foliolo', q.x, q.y, t.s * .68, -12 - t.e1 * 18, cH);
+      cuerpo += animar ? `<g class="h" style="transform-origin:${f1(q.x)}px ${f1(q.y)}px;animation-delay:${t.delay + 560}ms">${bajo}</g>` : bajo;
+      if (t.e2 < .38) {
+        const sg = t.e2 < .19 ? 1 : -1;
+        arriba += `<path d="M${f1(t.xt)},${f1(t.top)} c${3*sg},-7 ${9*sg},-9 ${12*sg},-4 c${2*sg},4 ${-2*sg},7 ${-5*sg},5" fill="none" stroke="${cT}" stroke-width="1.1" stroke-linecap="round"/>`;
+      }
+    }
+    cuerpo += animar ? `<g class="h" style="transform-origin:${f1(t.xt)}px ${f1(t.top)}px;animation-delay:${t.delay + 650}ms">${arriba}</g>` : arriba;
+    if (t.e1 > .55) raices += `<path d="M${f1(t.x)},${base + 1} l${f1((t.e2 - .5) * 5)},${f1(5 + t.e1 * 10)}" stroke="#EFE6D3" stroke-width="1" opacity=".8" fill="none"/>`;
+    if (t.k === 'girasol' && t.e2 > .72) semillas += `<ellipse cx="${f1(t.x + (t.e1 - .5) * 6)}" cy="${base - 1.5}" rx="3.4" ry="1.9" fill="#34332E"/>`;
+    if (t.k === 'guisante' && t.e2 > .78) semillas += `<circle cx="${f1(t.x + (t.e1 - .5) * 6)}" cy="${base - 1.8}" r="2.4" fill="#CDBB7A"/>`;
+  }
+
+  let linea = '';
+  for (let x = 4; x < W; x += 17) {
+    const d = 1450 + Math.round(x / W * 650);
+    linea += `<line x1="${f1(x)}" y1="${corte}" x2="${f1(Math.min(W, x + 10))}" y2="${corte}" stroke="#8E3B6B" stroke-width="2.6" stroke-linecap="round"${animar ? ` class="c" style="animation-delay:${d}ms"` : ''}/>`;
+  }
+  return { svg: fondo + raices + cuerpo + semillas + linea, corte };
+}
+
+/* Láminas de herbario: manojo de tallos cortados, a escala (1 cm = 20 unidades) */
+function especimen(k) {
+  const v = VARS[k], r = rng(k.length * 977 + k.charCodeAt(0) * 31);
+  const cm = 20, corte = 214;
+  const alto = { guisante: 9, girasol: 8, brocoli: 4.5, rabano: 6 }[k] * cm;
+  const n = (k === 'brocoli' || k === 'rabano') ? 7 : 5;
+  const abre = { guisante: 78, girasol: 76, brocoli: 56, rabano: 66 }[k];
+  let o = '';
+  for (let i = 0; i < n; i++) {
+    const t = i / (n - 1) - .5;
+    const x0 = 100 + t * 16 + (r() - .5) * 3;
+    const xt = 100 + t * abre + (r() - .5) * 10;
+    const yt = corte - alto * (.84 + r() * .16);
+    const p = [x0, corte, x0, corte - alto * .45, xt - t * 8, yt + alto * .28, xt, yt];
+    o += `<path d="M${f1(p[0])},${p[1]} C${f1(p[2])},${f1(p[3])} ${f1(p[4])},${f1(p[5])} ${f1(p[6])},${f1(p[7])}" fill="none" stroke="${v.tallo}" stroke-width="${f1(v.grosor * 1.35)}" stroke-linecap="butt"/>`;
+    const s = (v.tam[0] + r() * (v.tam[1] - v.tam[0])) * 1.55;
+    const aL = -150 + t * 28 + (r() - .5) * 14, aR = -30 + t * 28 + (r() - .5) * 14;
+    if (k === 'guisante') {
+      [.52, .76].forEach((u, j) => {
+        const q = bez(p, u), ss = s * (1.05 - j * .12), a1 = -168 + t * 20, a2 = -14 + t * 20;
+        o += hoja('foliolo', q.x, q.y, ss, a1, v.hoja2) + nervio(q.x, q.y, ss, a1, '#244F22');
+        o += hoja('foliolo', q.x, q.y, ss * .95, a2, v.hoja) + nervio(q.x, q.y, ss * .95, a2, '#244F22');
+      });
+      o += hoja('foliolo', xt, yt, s * .8, aL, v.hoja) + hoja('foliolo', xt, yt, s * .75, aR, v.hoja2);
+      if (i % 2 === 0) {
+        const sg = t < 0 ? -1 : 1;
+        o += `<path d="M${f1(xt)},${f1(yt)} c${4*sg},-10 ${14*sg},-12 ${17*sg},-5 c${2*sg},5 ${-3*sg},9 ${-7*sg},6 c${-2*sg},-2 ${-1*sg},-5 ${1*sg},-5" fill="none" stroke="${v.tallo}" stroke-width="1.2" stroke-linecap="round"/>`;
+      }
+    } else {
+      const segunda = (k === 'rabano' && i % 3 === 1) ? v.hoja2 : v.hoja;
+      o += hoja(v.forma, xt, yt, s, aL, v.hoja) + nervio(xt, yt, s, aL, '#244F22');
+      o += hoja(v.forma, xt, yt, s * .95, aR, segunda) + nervio(xt, yt, s * .95, aR, '#244F22');
+      if (k === 'girasol' && i === 1) {
+        const rad = aL * Math.PI / 180, hx = xt + Math.cos(rad) * s * .92, hy = yt + Math.sin(rad) * s * .92;
+        o += `<g transform="translate(${f1(hx)} ${f1(hy)}) rotate(${f1(aL)})"><ellipse rx="8" ry="4.6" fill="#34332E"/><path d="M-6,-1.4 L6,-1.4 M-6,1.4 L6,1.4" stroke="#8C8A80" stroke-width=".8"/></g>`;
+      }
+    }
+  }
+  o += `<rect x="72" y="${corte - 34}" width="56" height="12" fill="#E8DDC0" opacity=".93" transform="rotate(-5 100 ${corte - 28})"/>`;
+  o += `<g stroke="#17301C" stroke-width="1.2" fill="none"><line x1="14" y1="238" x2="${14 + cm}" y2="238"/><line x1="14" y1="234" x2="14" y2="242"/><line x1="${14 + cm}" y1="234" x2="${14 + cm}" y2="242"/></g><text x="${14 + cm + 7}" y="242" font-size="10" fill="#43584A" font-family="Alegreya Sans, sans-serif">1 cm</text>`;
+  return o;
+}
+
+/* Plántula de guisante para el control de 12 días */
+const P = {
+  alto: [0, 0, 6, 20, 36, 52, 68, 82, 94, 104, 112, 118, 122],
+  tam:  [0, 0, 5, 6, 7, 9, 11, 13, 15, 16, 17, 18, 19],
+  raiz: [0, 0, 10, 18, 26, 32, 36, 40, 42, 44, 46, 47, 48]
+};
+const FIBRA = (() => {
+  const r = rng(99); let s = '';
+  for (let i = 0; i < 70; i++) {
+    const x = r() * 320, y = 212 + r() * 42, l = 3 + r() * 7, a = r() * Math.PI;
+    s += `<line x1="${f1(x)}" y1="${f1(y)}" x2="${f1(x + Math.cos(a) * l)}" y2="${f1(y + Math.sin(a) * l)}" stroke="${TONOS_COCO[Math.floor(r() * 4)]}" stroke-width="1.2" stroke-linecap="round"/>`;
+  }
+  return s;
+})();
+function planta(cx, d, k, lado) {
+  const base = 206, oscuro = d <= 4;
+  const h = P.alto[d] * k, s = P.tam[d] * 1.4, rl = P.raiz[d] * k;
+  const verde = d <= 4 ? 0 : (d === 5 ? .4 : (d === 6 ? .75 : 1));
+  const abre = d <= 4 ? 0 : (d === 5 ? .3 : (d === 6 ? .7 : 1));
+  const cT = mezcla('#EEE6C4', '#9CC27F', verde), cH = mezcla('#E6D98E', '#4C8C3F', verde), cH2 = mezcla('#DCCF84', '#3F7A35', verde);
+  let o = '';
+  if (rl > 0) {
+    o += `<path d="M${cx},${base + 2} C${cx + 2},${f1(base + rl * .4)} ${cx - 3},${f1(base + rl * .7)} ${cx + 1},${f1(base + rl)}" stroke="#F2EBDD" stroke-width="1.7" fill="none" stroke-linecap="round"/>`;
+    if (rl > 20) o += `<path d="M${cx},${f1(base + rl * .35)} q7,4 11,${f1(rl * .3)}" stroke="#F2EBDD" stroke-width="1.1" fill="none" stroke-linecap="round"/><path d="M${cx},${f1(base + rl * .55)} q-8,3 -11,${f1(rl * .28)}" stroke="#F2EBDD" stroke-width="1.1" fill="none" stroke-linecap="round"/>`;
+  }
+  const top = base - h;
+  if (h > 0) {
+    if (oscuro) {
+      const tx = cx - 10 * lado, ty = top + 8;
+      o += `<path d="M${cx},${base - 6} C${cx},${f1(base - h * .6)} ${cx + lado},${f1(top)} ${cx - 5 * lado},${f1(top - 1)} C${cx - 9 * lado},${f1(top - 1)} ${cx - 10 * lado},${f1(top + 3)} ${tx},${f1(ty)}" stroke="${cT}" stroke-width="3" fill="none" stroke-linecap="round"/>`;
+      o += hoja('foliolo', tx, ty, s * .7, lado > 0 ? 100 : 80, cH) + hoja('foliolo', tx, ty, s * .63, lado > 0 ? 78 : 102, cH2);
+    } else {
+      const lean = (1 - abre) * 4 * lado;
+      o += `<path d="M${cx},${base - 6} C${cx},${f1(base - h * .5)} ${f1(cx + lean)},${f1(base - h * .85)} ${cx},${f1(top)}" stroke="${cT}" stroke-width="3.2" fill="none" stroke-linecap="round"/>`;
+      if (d >= 9) {
+        const py = base - h * .62, px = cx + lean * .3;
+        o += hoja('foliolo', px, py, s * .85, -172, cH2) + hoja('foliolo', px, py, s * .8, -8, cH);
+      }
+      const aL = -95 - 62 * abre, aR = -85 + 62 * abre;
+      o += hoja('foliolo', cx, top, s, aL, cH) + hoja('foliolo', cx, top, s * .95, aR, cH2);
+      if (d >= 8) o += `<path d="M${cx},${f1(top)} c${3*lado},-9 ${11*lado},-12 ${15*lado},-7 c${3*lado},4 ${-1*lado},9 ${-5*lado},7 c${-2*lado},-1 ${-2*lado},-4 0,-4" fill="none" stroke="${cT}" stroke-width="1.4" stroke-linecap="round"/>`;
+    }
+  }
+  o += `<ellipse cx="${cx - 1}" cy="${base - 4}" rx="9" ry="7.5" fill="${d >= 9 ? '#B7A874' : '#CFC287'}" stroke="#A8935F" stroke-width="1"/>`;
+  return { o, top };
+}
+function plantula(d) {
+  const base = 206, oscuro = d <= 4;
+  let o = `<rect width="320" height="280" fill="${oscuro ? '#22362A' : '#FFFFFF'}"/>`;
+  o += `<rect x="0" y="${base}" width="320" height="54" fill="#8A6440"/>${FIBRA}<rect x="0" y="260" width="320" height="20" fill="#17301C"/>`;
+  const fila = [[48, .9, 1], [104, 1.02, -1], [160, 1, 1], [216, .95, -1], [272, 1.05, 1]];
+  let alto = base;
+  for (const [x, k, lado] of fila) { const p = planta(x, d, k, lado); o += p.o; alto = Math.min(alto, p.top); }
+  if (d <= 4) {
+    const yT = Math.min(base - 17, alto - 10);
+    o += `<rect x="18" y="${f1(yT)}" width="284" height="9" rx="2" fill="#56645A"/><rect x="128" y="${f1(yT - 20)}" width="64" height="20" rx="3" fill="#8C978F"/><text x="160" y="${f1(yT - 6)}" text-anchor="middle" font-size="11" fill="#22362A" font-family="Alegreya Sans, sans-serif">peso</text>`;
+  }
+  if (d === 12) {
+    const yc = base - 17;
+    o += `<line x1="34" y1="${yc}" x2="308" y2="${yc}" stroke="#8E3B6B" stroke-width="2.4" stroke-dasharray="9 6" stroke-linecap="round"/>${TIJERA(10, yc - 8, '#8E3B6B')}<text x="310" y="${yc - 7}" text-anchor="end" font-size="12" font-weight="700" fill="#8E3B6B" font-family="Alegreya Sans, sans-serif">corte</text>`;
+  }
+  return o;
+}
+/*GEN-FIN*/
+
+const quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Bosque del inicio */
+const svgB = document.getElementById('bosque'), etq = document.getElementById('corte-etiqueta');
+let anchoPrevio = 0;
+function pintarBosque(animar) {
+  const caja = svgB.parentNode;
+  const W = Math.round(caja.clientWidth), H = Math.round(caja.clientHeight);
+  if (W < 50 || H < 50) return;
+  anchoPrevio = W;
+  const res = bosque(W, H, animar);
+  svgB.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svgB.innerHTML = res.svg;
+  if (etq) {
+    etq.style.top = Math.max(8, res.corte - etq.offsetHeight - 12) + 'px';
+    if (animar) setTimeout(() => etq.classList.add('ver'), 1900);
+    else etq.classList.add('ver');
+  }
+}
+if (svgB) {
+  pintarBosque(!quieto);
+  let espera;
+  window.addEventListener('resize', () => {
+    clearTimeout(espera);
+    espera = setTimeout(() => {
+      if (Math.abs(svgB.parentNode.clientWidth - anchoPrevio) > 4) pintarBosque(false);
+    }, 180);
+  });
+}
+
+/* Láminas */
+document.querySelectorAll('svg.especimen').forEach(s => { s.innerHTML = especimen(s.getAttribute('data-var')); });
+
+/* Control de días */
+const rango = document.getElementById('dia'), svgP = document.getElementById('plantula');
+const FASES = [
+  { a: 1,  t: 'Siembra', p: 'La semilla se reparte sobre fibra de coco húmeda y se tapa con peso. El guisante y el girasol pasan la noche anterior en remojo.' },
+  { a: 4,  t: 'Oscuridad y peso', p: 'A oscuras, la semilla echa raíz y el tallo empuja hacia arriba, todavía pálido y doblado. El peso ayuda a que la raíz agarre y a que crezcan parejas.' },
+  { a: 6,  t: 'A la luz', p: 'Se destapa la bandeja. Con la luz, el tallo se endereza y las primeras hojas se abren y pasan del amarillo pálido al verde.' },
+  { a: 11, t: 'Crecer', p: 'Se riega por abajo, desde una bandeja con agua, para no mojar las hojas. Las variedades rápidas ya se cortan; el guisante, que es el que más tarda, sigue creciendo.' },
+  { a: 12, t: 'Cosecha', p: 'Corte con tijera, justo por encima de la fibra. Enjuague en agua fría, envasado con su etiqueta de lote y a la nevera.' }
+];
+const LISTOS = { 7: 'el rábano rojo', 10: 'el brócoli', 11: 'el girasol', 12: 'el guisante' };
+function ponerDia() {
+  const d = parseInt(rango.value, 10);
+  const f = FASES.find(x => d <= x.a);
+  document.getElementById('dia-num').textContent = d;
+  document.getElementById('fase-tit').textContent = f.t;
+  document.getElementById('fase-txt').textContent = f.p;
+  document.getElementById('fase-listo').textContent = LISTOS[d] ? `Hoy toca cortar ${LISTOS[d]}.` : '';
+  rango.setAttribute('aria-valuetext', `Día ${d}: ${f.t}`);
+  svgP.innerHTML = plantula(d);
+}
+if (rango && svgP) { rango.addEventListener('input', ponerDia); ponerDia(); }
+})();
+</script>
 </body>
 </html>

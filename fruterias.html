@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microgreens para fruterías en Grado | Germinados Muñiz</title>
+<meta name="description" content="Tarrinas de microgreens cultivados en Grado, listas para el mostrador, con precio de venta recomendado y margen para la tienda. Reparto los jueves.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Microgreens para fruterías | Germinados Muñiz">
+<meta property="og:description" content="Tarrinas listas para el mostrador, con PVP recomendado de 2,50 € y un 30 % de margen para la tienda.">
+<meta name="theme-color" content="#17301C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 24V12' stroke='%2317301C' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z' fill='%234C8C3F'/%3E%3Cpath d='M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z' fill='%238E3B6B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== Base compartida (igual en las tres páginas) ===== */
+:root{
+  --hoja:#F2F5EC; --papel:#FFFFFF; --tinta:#17301C; --tinta-2:#43584A;
+  --brote:#4C8C3F; --brote-txt:#3A7030; --claro:#CDE8B5;
+  --rabano:#8E3B6B; --rabano-osc:#6F2C53; --girasol:#D2A12B; --coco:#8A6440;
+  --linea:#D5DCCA; --rojo:#C22A2A;
+  --serif:'Alegreya',Georgia,'Times New Roman',serif;
+  --sans:'Alegreya Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--hoja);color:var(--tinta);font-family:var(--sans);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+svg{display:block;max-width:100%}
+a{color:var(--brote-txt);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--tinta)}
+:focus-visible{outline:3px solid var(--rabano);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);color:var(--tinta);line-height:1.1}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:700;letter-spacing:-.005em;max-width:24ch}
+h3{font-size:1.28rem;font-weight:700;line-height:1.25}
+p,li{max-width:66ch}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.bloque{padding:88px 0}
+.papel{background:var(--papel)}
+.entrada{margin-top:14px;font-size:1.18rem;color:var(--tinta-2)}
+.oculto{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.salto{position:absolute;left:-9999px;top:8px;background:var(--tinta);color:#fff;padding:8px 14px;border-radius:4px;z-index:100}
+.salto:focus{left:12px}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(242,245,236,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.nav-in{max-width:1120px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:800;font-size:1.22rem;color:var(--tinta);text-decoration:none;white-space:nowrap}
+.marca:hover{color:var(--tinta)}
+.menu{display:flex;align-items:center;gap:24px;list-style:none}
+.menu a{color:var(--tinta);text-decoration:none;font-size:1.02rem;padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--tinta);border-bottom-color:var(--linea)}
+.menu a[aria-current="page"]{border-bottom-color:var(--brote)}
+.menu a.btn{padding:8px 16px;font-size:.98rem}
+.menu a.btn-wa,.menu a.btn-wa:hover{color:#fff;border-bottom-color:transparent}
+@media(max-width:760px){.menu .solo-ancho{display:none}}
+@media(max-width:520px){.nav .marca span{display:none}.menu{gap:18px}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1.06rem;line-height:1.2;text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid transparent;transition:background-color .15s,color .15s,border-color .15s}
+.btn svg{flex-shrink:0}
+.btn-wa{background:var(--rabano);color:#fff}
+.btn-wa:hover{background:var(--rabano-osc);color:#fff}
+.btn-linea{border-color:var(--tinta);color:var(--tinta)}
+.btn-linea:hover{background:var(--tinta);color:#fff}
+.btn-claro{border-color:#fff;color:#fff}
+.btn-claro:hover{background:#fff;color:var(--tinta)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+.tabla-caja{overflow-x:auto;margin-top:32px;border:1px solid var(--linea);border-radius:6px;background:var(--papel)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:1rem}
+th,td{text-align:left;vertical-align:top;padding:14px 18px;border-bottom:1px solid var(--linea)}
+thead th{font-family:var(--serif);font-weight:700;font-size:1.08rem;background:#F7F9F3}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td i,th i{font-family:var(--serif);color:var(--tinta-2)}
+th small,td small{display:block;font-weight:400;color:var(--tinta-2);font-size:.9rem}
+
+.semana{display:grid;grid-template-columns:repeat(7,minmax(38px,1fr));gap:6px;list-style:none;max-width:520px;margin-top:28px}
+.semana li{border:1px solid var(--linea);background:var(--papel);border-radius:6px;text-align:center;padding:10px 2px 8px;max-width:none}
+.semana abbr{display:block;text-decoration:none;font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.2}
+.semana small{display:block;min-height:1.3em;font-size:.76rem;color:var(--tinta-2)}
+.semana .si{background:var(--brote);border-color:var(--brote)}
+.semana .alt{background:var(--rabano);border-color:var(--rabano)}
+.semana .si abbr,.semana .si small,.semana .alt abbr,.semana .alt small{color:#fff}
+
+.dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media(max-width:860px){.dos{grid-template-columns:1fr;gap:36px}}
+.lista{list-style:none;margin-top:26px;display:grid;gap:12px}
+.lista li{position:relative;padding-left:26px}
+.lista li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--brote)}
+
+.etiqueta-fig{max-width:380px;width:100%;margin:0 auto}
+.etiqueta{background:#fff;border:1px solid #CFCFC7;border-radius:3px;padding:16px 18px 18px;color:#000;box-shadow:0 2px 0 #E4E6DD}
+.et-cab{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:3px solid var(--rojo);padding-bottom:8px;margin-bottom:10px}
+.et-cab b{font-size:1.06rem}
+.et-cab span{font-size:.84rem}
+.et-prod{font-weight:700;font-size:1.08rem;margin-bottom:8px}
+.etiqueta dl{display:grid;grid-template-columns:auto 1fr;gap:3px 16px;font-size:.95rem}
+.etiqueta dt{color:#444}
+.etiqueta .lote{color:var(--rojo);font-weight:700;letter-spacing:.02em}
+.etiqueta-fig figcaption{margin-top:12px;font-size:.95rem;color:var(--tinta-2)}
+
+.oscura{background:var(--tinta);color:#E4EBDC}
+.oscura h2,.oscura h3{color:#fff}
+.oscura .entrada{color:#C9D7C1}
+.oscura a{color:#fff}
+
+.pie{background:var(--tinta);color:#DCE6D3;padding:64px 0 40px}
+.pie a{color:#fff}
+.pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+@media(max-width:760px){.pie-grid{grid-template-columns:1fr}}
+.pie h2{font-size:1.15rem;color:#fff;margin-bottom:12px;max-width:none}
+.pie ul{list-style:none;display:grid;gap:6px}
+.pie .marca{color:#fff}
+.pie p{margin-top:12px;font-size:1rem}
+.pie .legal{margin-top:44px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem;color:#A9BBA3}
+
+@media(max-width:600px){.bloque{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ===== Fruterías ===== */
+.hero-f{padding:clamp(40px,7vh,88px) 0 72px}
+.hero-f-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+@media(max-width:900px){.hero-f-grid{grid-template-columns:1fr;gap:24px}}
+.hero-f h1{font-size:clamp(2.4rem,5.4vw,4.3rem);font-weight:800;line-height:1.02;letter-spacing:-.015em;max-width:15ch}
+.lede{margin-top:22px;font-size:clamp(1.12rem,1.8vw,1.3rem);color:var(--tinta-2);max-width:48ch}
+#mostrador{width:100%;height:auto;aspect-ratio:560/264;max-width:620px;margin:0 auto}
+.nota{border-left:4px solid var(--girasol);padding:4px 0 4px 20px;font-size:1.06rem}
+.nota strong{display:block;font-family:var(--serif);font-size:1.18rem;margin-bottom:6px}
+.seg{border:0;margin-top:20px;min-width:0}
+.seg legend{font-size:.95rem;color:#C9D7C1;margin-bottom:8px;padding:0}
+.opciones{display:flex;flex-wrap:wrap;gap:8px}
+.opciones label{position:relative}
+.opciones input{position:absolute;opacity:0;width:1px;height:1px}
+.opciones span{display:inline-block;padding:8px 14px;border:1px solid rgba(255,255,255,.35);border-radius:6px;font-size:1rem;color:#fff;cursor:pointer;transition:background-color .15s,color .15s}
+.opciones label:hover span{border-color:#fff}
+.opciones input:checked + span{background:var(--claro);border-color:var(--claro);color:var(--tinta);font-weight:700}
+.opciones input:focus-visible + span{outline:3px solid #E7A9CF;outline-offset:2px}
+.esc-g{margin-top:20px}
+.esc-g label{display:block;font-size:.95rem;color:#C9D7C1}
+.esc-g strong{color:#fff}
+.esc-g input{display:block;width:100%;height:30px;margin-top:6px;accent-color:var(--claro);cursor:pointer}
+.esc-escala{display:flex;justify-content:space-between;font-size:.85rem;color:#AFC0A8}
+.esc-nota{margin-top:16px;font-size:.88rem;color:#AFC0A8}
+.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:36px}
+@media(max-width:860px){.tres{grid-template-columns:1fr;gap:26px}}
+.tres > div{border-top:3px solid var(--brote);padding-top:16px}
+.tres p{margin-top:8px;color:var(--tinta-2)}
+.precio{font-family:var(--serif);font-weight:700;font-size:1.15rem;white-space:nowrap}
+.nota-tabla{margin-top:16px;font-size:1rem;color:var(--tinta-2)}
+.pasos{list-style:none;counter-reset:paso;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-top:40px}
+.pasos li{position:relative;counter-increment:paso;padding-top:50px}
+.pasos li::before{content:counter(paso);position:absolute;top:0;left:0;font-family:var(--serif);font-weight:800;font-size:2.4rem;line-height:1;color:var(--brote)}
+.pasos p{margin-top:6px;color:var(--tinta-2)}
+.zona-larga{margin-top:32px;font-weight:700}
+.firma{margin-top:28px;color:#C9D7C1}
+</style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
+    <a class="marca" href="index.html" aria-label="Germinados Muñiz, inicio">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.4" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
+      <span>Germinados Muñiz</span>
+    </a>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="restaurantes.html">Restaurantes</a></li>
+      <li><a href="fruterias.html" aria-current="page">Fruterías</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero-f">
+  <div class="wrap hero-f-grid">
+    <div>
+      <h1>Algo nuevo para tu mostrador, cultivado en Grado.</h1>
+      <p class="lede">Microgreens en tarrina de 370 cc, con etiqueta de lote y fecha de cosecha, listos para vender. Precio de venta recomendado, 2,50 €; margen para la tienda, un 30 %.</p>
+      <div class="acciones">
+        <a class="btn btn-wa" href="#contacto">Pedir muestras para la tienda</a>
+        <a class="btn btn-linea" href="#como">Ver cómo funciona</a>
+      </div>
+    </div>
+    <svg id="mostrador" viewBox="0 166 560 264" role="img" aria-label="Dos tarrinas de microgreens, de rábano rojo y de guisante, sobre una balda de madera, con un cartel de precio de 2,50 euros"></svg>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="bloque papel" id="cuentas" aria-labelledby="t-cuentas">
+  <div class="wrap">
+    <h2 id="t-cuentas">Las cuentas, claras.</h2>
+    <div class="tabla-caja">
+      <table>
+        <thead><tr><th scope="col">Formato</th><th scope="col">Precio de venta recomendado</th><th scope="col">Margen para la tienda</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Tarrina de 370 cc, una variedad</th><td class="precio">2,50 €</td><td class="precio">30 % del PVP</td></tr>
+          <tr><th scope="row">Tarrina de 500 cc, mezcla<small>Próximamente</small></th><td class="precio">3,00 €</td><td class="precio">30 % del PVP</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota-tabla">La tarifa para tienda te la dejo por escrito en la primera visita.</p>
+  </div>
+</section>
+
+<section class="bloque" aria-labelledby="t-porque">
+  <div class="wrap">
+    <h2 id="t-porque">Por qué funcionan en una frutería.</h2>
+    <div class="tres">
+      <div><h3>Casi nadie los tiene</h3><p>Hoy es difícil encontrar microgreens frescos de la zona en una tienda. Es un motivo para que el cliente pregunte y vuelva.</p></div>
+      <div><h3>Van con lo que ya vendes</h3><p>Junto a lechugas, tomates o aguacates, son el remate de la ensalada que el cliente ya se lleva.</p></div>
+      <div><h3>Con fecha y con origen</h3><p>Cultivados en Grado, con la fecha de cosecha en la etiqueta: el cliente sabe qué se lleva y de dónde viene.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque papel" aria-labelledby="t-necesita">
+  <div class="wrap dos">
+    <div>
+      <h2 id="t-necesita">Lo que necesita tu tienda.</h2>
+      <ul class="lista">
+        <li><strong>Frío.</strong> Una vitrina o una cámara entre 2 y 4 °C. Fuera de la nevera no aguantan.</li>
+        <li><strong>Un sitio a la vista</strong>, mejor cerca de las ensaladas.</li>
+        <li><strong>Rotación.</strong> Duran seis días desde la cosecha: mejor pedir poco y a menudo.</li>
+      </ul>
+    </div>
+    <div class="nota">
+      <strong>Para explicárselo al cliente</strong>
+      <p>Con las primeras tarrinas te dejo un cartel para el mostrador que cuenta qué son y cómo se comen. Y para cualquier duda, está <a href="index.html">la página para el público</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bloque" id="como" aria-labelledby="t-como">
+  <div class="wrap">
+    <h2 id="t-como">Cómo empezamos.</h2>
+    <ol class="semana" aria-label="Pides hasta el lunes y el reparto es el jueves">
+      <li class="alt"><abbr title="lunes">L</abbr><small>pides</small></li>
+      <li><abbr title="martes">M</abbr><small></small></li>
+      <li><abbr title="miércoles">X</abbr><small></small></li>
+      <li class="si"><abbr title="jueves">J</abbr><small>reparto</small></li>
+      <li><abbr title="viernes">V</abbr><small></small></li>
+      <li><abbr title="sábado">S</abbr><small></small></li>
+      <li><abbr title="domingo">D</abbr><small></small></li>
+    </ol>
+    <ol class="pasos">
+      <li><h3>Muestras y cartel</h3><p>Te llevo tarrinas para que las pruebes y el cartel para el mostrador.</p></li>
+      <li><h3>Primer pedido, pequeño</h3><p>Empezamos con pocas tarrinas para ver cómo rotan. La compra es en firme, así que mejor empezar con poco.</p></li>
+      <li><h3>Pides hasta el lunes</h3><p>El jueves corto tus tarrinas y te las llevo en frío, con su etiqueta.</p></li>
+      <li><h3>Ajustamos cada semana</h3><p>Subimos o bajamos la cantidad según lo que hayas vendido.</p></li>
+      <li><h3>Te doy visibilidad</h3><p>Tu tienda aparece en esta web como punto de venta y la anuncio en Instagram.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bloque oscura" id="contacto" aria-labelledby="t-contacto">
+  <div class="wrap">
+    <h2 id="t-contacto">¿Los probamos en tu tienda?</h2>
+    <p class="entrada">Pregunta en el puesto del mercado de Grado (martes, viernes y domingo) o escríbeme por Instagram, y paso con muestras. Reparto en Grado y alrededores.</p>
+    <div class="acciones">
+      <a class="btn btn-wa" href="https://www.instagram.com/germinadosmuniz/">Escribir por Instagram</a>
+    </div>
+    <p class="firma">Carlos Muñiz, productor. Grado (Asturias).</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie-grid">
+      <div>
+        <a class="marca" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#7DBB6B"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#C77BA6"/></svg><span>Germinados Muñiz</span></a>
+        <p>Microgreens cultivados y cortados a mano en Grado (Asturias) por Carlos Muñiz.</p>
+      </div>
+      <div>
+        <h2>Páginas</h2>
+        <ul>
+          <li><a href="index.html">Qué son los microgreens</a></li>
+          <li><a href="restaurantes.html">Para restaurantes</a></li>
+          <li><a href="fruterias.html">Para fruterías</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li>Mercado de Grado: martes, viernes y domingo</li>
+          <li><a href="https://www.instagram.com/germinadosmuniz/">Instagram: @germinadosmuniz</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© 2026 Germinados Muñiz. Grado, Asturias.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+'use strict';
+/*GEN-INICIO*/
+function rng(semilla) {
+  return function () {
+    semilla = (semilla + 0x6D2B79F5) | 0;
+    let t = Math.imul(semilla ^ (semilla >>> 15), 1 | semilla);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const f1 = n => Math.round(n * 10) / 10;
+function mezcla(a, b, t) {
+  const pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+  const c = (s) => Math.round(((pa >> s) & 255) + (((pb >> s) & 255) - ((pa >> s) & 255)) * t);
+  return '#' + ((1 << 24) | (c(16) << 16) | (c(8) << 8) | c(0)).toString(16).slice(1);
+}
+const FORMA = {
+  corazon: s => `M0,0 C${f1(s*.28)},${f1(-s*.58)} ${f1(s*.92)},${f1(-s*.62)} ${f1(s*1.02)},${f1(-s*.14)} L${f1(s*.86)},0 L${f1(s*1.02)},${f1(s*.14)} C${f1(s*.92)},${f1(s*.62)} ${f1(s*.28)},${f1(s*.58)} 0,0Z`,
+  foliolo: s => `M0,0 C${f1(s*.18)},${f1(-s*.5)} ${f1(s*.8)},${f1(-s*.52)} ${f1(s*.98)},${f1(-s*.04)} C${f1(s*.8)},${f1(s*.44)} ${f1(s*.2)},${f1(s*.42)} 0,0Z`
+};
+const hoja = (forma, x, y, s, ang, color) =>
+  `<path d="${FORMA[forma](s)}" transform="translate(${f1(x)} ${f1(y)}) rotate(${f1(ang)})" fill="${color}"/>`;
+const VARS = {
+  guisante: { tallo:'#8DBA6A', hoja:'#4C8C3F', hoja2:'#3F7A35', forma:'foliolo', grosor:2.2, tam:[7,10] },
+  rabano:   { tallo:'#8E3B6B', hoja:'#5E8C3F', hoja2:'#7A3A5E', forma:'corazon', grosor:1.8, tam:[8,11] }
+};
+
+/* Tarrina de 370 cc vista de frente, con brotes cortados revueltos dentro */
+function tarrina(cx, suelo, e, k, id) {
+  const v = VARS[k], r = rng(cx * 13 + id.length * 7);
+  const wt = 108 * e, wb = 90 * e, h = 150 * e, ryT = 17 * e, ryB = 11 * e;
+  const yB = suelo - ryB, yT = yB - h;
+  const cuerpo = `M${f1(cx - wt)},${f1(yT)} L${f1(cx - wb)},${f1(yB)} A${f1(wb)},${f1(ryB)} 0 0 0 ${f1(cx + wb)},${f1(yB)} L${f1(cx + wt)},${f1(yT)} A${f1(wt)},${f1(ryT)} 0 0 0 ${f1(cx - wt)},${f1(yT)}Z`;
+  let o = `<defs><clipPath id="${id}"><path d="${cuerpo}"/></clipPath></defs><path d="${cuerpo}" fill="#E3ECD9"/>`;
+  const piezas = [];
+  for (let i = 0, n = Math.round(175 * e); i < n; i++) {
+    piezas.push({ x: cx + (r() - .5) * 2 * wt * .96, y: yT - ryT * .7 + r() * (h + ryT * .7), a: -90 + (r() - .5) * 160,
+      l: (12 + r() * 22) * e, c: r(), q: r(), s: v.tam[0] + r() * (v.tam[1] - v.tam[0]), m: r() });
+  }
+  piezas.sort((a, b) => b.y - a.y);
+  let p = '';
+  for (const q of piezas) {
+    const osc = Math.min(1, Math.max(0, (q.y - yT) / h)) * .38;
+    const cT = mezcla(v.tallo, '#17301C', osc), cH = mezcla(v.hoja, '#17301C', osc), cH2 = mezcla(v.hoja2, '#17301C', osc);
+    const rad = q.a * Math.PI / 180, ex = q.x + Math.cos(rad) * q.l, ey = q.y + Math.sin(rad) * q.l;
+    p += `<path d="M${f1(q.x)},${f1(q.y)} Q${f1((q.x + ex) / 2 + (q.c - .5) * 8 * e)},${f1((q.y + ey) / 2 + (q.q - .5) * 8 * e)} ${f1(ex)},${f1(ey)}" stroke="${cT}" stroke-width="${f1(v.grosor * e * 1.1)}" fill="none" stroke-linecap="round"/>`;
+    const s = q.s * e * 1.45, seg = k === 'rabano' ? (q.m < .4 ? cH2 : cH) : cH2;
+    p += hoja(v.forma, ex, ey, s, q.a - 58, cH) + hoja(v.forma, ex, ey, s * .94, q.a + 58, seg);
+  }
+  o += `<g clip-path="url(#${id})">${p}</g>`;
+  o += `<path d="M${f1(cx - wt * .8)},${f1(yT + ryT * 1.4)} L${f1(cx - wb * .8)},${f1(yB - 3 * e)}" stroke="#FFFFFF" stroke-width="${f1(9 * e)}" stroke-linecap="round" opacity=".4"/>`;
+  o += `<path d="${cuerpo}" fill="none" stroke="#17301C" stroke-opacity=".38" stroke-width="1.5"/>`;
+  o += `<ellipse cx="${cx}" cy="${f1(yT)}" rx="${f1(wt + 3 * e)}" ry="${f1(ryT + 2 * e)}" fill="#FFFFFF" fill-opacity=".3" stroke="#17301C" stroke-opacity=".4" stroke-width="1.5"/>`;
+  o += `<ellipse cx="${cx}" cy="${f1(yT - 3 * e)}" rx="${f1(wt - 9 * e)}" ry="${f1(ryT - 5 * e)}" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1.2"/>`;
+  return { o, yT, h };
+}
+function etiquetaTarrina(cx, yT, h, e, nombre, lote, fecha) {
+  const w = 132 * e, hh = 68 * e, x = cx - w / 2, y = yT + h * .36;
+  return `<g font-family="Alegreya Sans, sans-serif" text-anchor="middle"><rect x="${f1(x)}" y="${f1(y)}" width="${f1(w)}" height="${f1(hh)}" rx="${f1(3 * e)}" fill="#FFFFFF" stroke="#17301C" stroke-opacity=".18"/><rect x="${f1(x)}" y="${f1(y)}" width="${f1(w)}" height="${f1(5 * e)}" fill="#C22A2A"/><text x="${cx}" y="${f1(y + 21 * e)}" font-size="${f1(13 * e)}" font-weight="700" fill="#000">Germinados Muñiz</text><text x="${cx}" y="${f1(y + 36 * e)}" font-size="${f1(10.5 * e)}" fill="#000">${nombre}</text><text x="${cx}" y="${f1(y + 50 * e)}" font-size="${f1(9.5 * e)}" font-weight="700" fill="#C22A2A">Lote ${lote}</text><text x="${cx}" y="${f1(y + 62 * e)}" font-size="${f1(9 * e)}" fill="#000">Cosecha ${fecha}</text></g>`;
+}
+function mostrador() {
+  const W = 560, suelo = 372;
+  let o = `<rect x="0" y="${suelo}" width="${W}" height="16" fill="#C39565"/><rect x="0" y="${suelo + 16}" width="${W}" height="72" fill="#A97B4F"/><line x1="0" y1="${suelo + 16}" x2="${W}" y2="${suelo + 16}" stroke="#8B6139" stroke-width="2"/>`;
+  for (let x = 0; x <= W; x += 112) o += `<line x1="${x}" y1="${suelo + 17}" x2="${x}" y2="460" stroke="#8B6139" stroke-width="3"/>`;
+  o += `<ellipse cx="160" cy="${suelo - 8}" rx="78" ry="7" fill="#17301C" opacity=".12"/><ellipse cx="318" cy="${suelo + 2}" rx="96" ry="9" fill="#17301C" opacity=".14"/>`;
+  const a = tarrina(160, suelo - 8, .8, 'rabano', 'tr-rabano');
+  o += a.o + etiquetaTarrina(160, a.yT, a.h, .8, 'Microgreens de rábano', 'T3-RA-240926', '24/09/2026');
+  const b = tarrina(318, suelo + 2, 1, 'guisante', 'tr-guisante');
+  o += b.o + etiquetaTarrina(318, b.yT, b.h, 1, 'Microgreens de guisante', 'T2-GU-240926', '24/09/2026');
+  o += `<g transform="rotate(4 484 308)"><rect x="420" y="252" width="128" height="112" rx="6" fill="#17301C"/><text x="484" y="282" text-anchor="middle" font-family="Alegreya, serif" font-style="italic" font-size="16" fill="#E4EBDC">Microgreens</text><text x="484" y="301" text-anchor="middle" font-family="Alegreya, serif" font-style="italic" font-size="16" fill="#E4EBDC">de Grado</text><text x="484" y="343" text-anchor="middle" font-family="Alegreya, serif" font-weight="800" font-size="31" fill="#CDE8B5">2,50 €</text></g>`;
+  return o;
+}
+/*GEN-FIN*/
+const svg = document.getElementById('mostrador');
+if (svg) svg.innerHTML = mostrador();
+})();
+</script>
+</body>
+</html>

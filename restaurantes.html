@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microbrotes para restaurantes en Asturias | Germinados Muñiz</title>
+<meta name="description" content="Microgreens (microbrotes) cortados el día del reparto para cocinas de Grado y alrededores. Tarifa por kilo, pedido fijo semanal y muestra sin compromiso.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Microgreens para restaurantes | Germinados Muñiz">
+<meta property="og:description" content="Cortados el día del reparto, en tu cocina cada jueves. Tarifa por kilo y muestra sin compromiso.">
+<meta name="theme-color" content="#17301C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M13 24V12' stroke='%2317301C' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z' fill='%234C8C3F'/%3E%3Cpath d='M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z' fill='%238E3B6B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== Base compartida (igual en las tres páginas) ===== */
+:root{
+  --hoja:#F2F5EC; --papel:#FFFFFF; --tinta:#17301C; --tinta-2:#43584A;
+  --brote:#4C8C3F; --brote-txt:#3A7030; --claro:#CDE8B5;
+  --rabano:#8E3B6B; --rabano-osc:#6F2C53; --girasol:#D2A12B; --coco:#8A6440;
+  --linea:#D5DCCA; --rojo:#C22A2A;
+  --serif:'Alegreya',Georgia,'Times New Roman',serif;
+  --sans:'Alegreya Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--hoja);color:var(--tinta);font-family:var(--sans);font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+svg{display:block;max-width:100%}
+a{color:var(--brote-txt);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--tinta)}
+:focus-visible{outline:3px solid var(--rabano);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);color:var(--tinta);line-height:1.1}
+h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:700;letter-spacing:-.005em;max-width:24ch}
+h3{font-size:1.28rem;font-weight:700;line-height:1.25}
+p,li{max-width:66ch}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.bloque{padding:88px 0}
+.papel{background:var(--papel)}
+.entrada{margin-top:14px;font-size:1.18rem;color:var(--tinta-2)}
+.oculto{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.salto{position:absolute;left:-9999px;top:8px;background:var(--tinta);color:#fff;padding:8px 14px;border-radius:4px;z-index:100}
+.salto:focus{left:12px}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(242,245,236,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.nav-in{max-width:1120px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:800;font-size:1.22rem;color:var(--tinta);text-decoration:none;white-space:nowrap}
+.marca:hover{color:var(--tinta)}
+.menu{display:flex;align-items:center;gap:24px;list-style:none}
+.menu a{color:var(--tinta);text-decoration:none;font-size:1.02rem;padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--tinta);border-bottom-color:var(--linea)}
+.menu a[aria-current="page"]{border-bottom-color:var(--brote)}
+.menu a.btn{padding:8px 16px;font-size:.98rem}
+.menu a.btn-wa,.menu a.btn-wa:hover{color:#fff;border-bottom-color:transparent}
+@media(max-width:760px){.menu .solo-ancho{display:none}}
+@media(max-width:520px){.nav .marca span{display:none}.menu{gap:18px}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1.06rem;line-height:1.2;text-decoration:none;padding:14px 22px;border-radius:6px;border:2px solid transparent;transition:background-color .15s,color .15s,border-color .15s}
+.btn svg{flex-shrink:0}
+.btn-wa{background:var(--rabano);color:#fff}
+.btn-wa:hover{background:var(--rabano-osc);color:#fff}
+.btn-linea{border-color:var(--tinta);color:var(--tinta)}
+.btn-linea:hover{background:var(--tinta);color:#fff}
+.btn-claro{border-color:#fff;color:#fff}
+.btn-claro:hover{background:#fff;color:var(--tinta)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+.tabla-caja{overflow-x:auto;margin-top:32px;border:1px solid var(--linea);border-radius:6px;background:var(--papel)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:1rem}
+th,td{text-align:left;vertical-align:top;padding:14px 18px;border-bottom:1px solid var(--linea)}
+thead th{font-family:var(--serif);font-weight:700;font-size:1.08rem;background:#F7F9F3}
+tbody th{font-weight:700}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td i,th i{font-family:var(--serif);color:var(--tinta-2)}
+th small,td small{display:block;font-weight:400;color:var(--tinta-2);font-size:.9rem}
+
+.semana{display:grid;grid-template-columns:repeat(7,minmax(38px,1fr));gap:6px;list-style:none;max-width:520px;margin-top:28px}
+.semana li{border:1px solid var(--linea);background:var(--papel);border-radius:6px;text-align:center;padding:10px 2px 8px;max-width:none}
+.semana abbr{display:block;text-decoration:none;font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.2}
+.semana small{display:block;min-height:1.3em;font-size:.76rem;color:var(--tinta-2)}
+.semana .si{background:var(--brote);border-color:var(--brote)}
+.semana .alt{background:var(--rabano);border-color:var(--rabano)}
+.semana .si abbr,.semana .si small,.semana .alt abbr,.semana .alt small{color:#fff}
+
+.dos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+@media(max-width:860px){.dos{grid-template-columns:1fr;gap:36px}}
+.lista{list-style:none;margin-top:26px;display:grid;gap:12px}
+.lista li{position:relative;padding-left:26px}
+.lista li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--brote)}
+
+.etiqueta-fig{max-width:380px;width:100%;margin:0 auto}
+.etiqueta{background:#fff;border:1px solid #CFCFC7;border-radius:3px;padding:16px 18px 18px;color:#000;box-shadow:0 2px 0 #E4E6DD}
+.et-cab{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:3px solid var(--rojo);padding-bottom:8px;margin-bottom:10px}
+.et-cab b{font-size:1.06rem}
+.et-cab span{font-size:.84rem}
+.et-prod{font-weight:700;font-size:1.08rem;margin-bottom:8px}
+.etiqueta dl{display:grid;grid-template-columns:auto 1fr;gap:3px 16px;font-size:.95rem}
+.etiqueta dt{color:#444}
+.etiqueta .lote{color:var(--rojo);font-weight:700;letter-spacing:.02em}
+.etiqueta-fig figcaption{margin-top:12px;font-size:.95rem;color:var(--tinta-2)}
+
+.oscura{background:var(--tinta);color:#E4EBDC}
+.oscura h2,.oscura h3{color:#fff}
+.oscura .entrada{color:#C9D7C1}
+.oscura a{color:#fff}
+
+.pie{background:var(--tinta);color:#DCE6D3;padding:64px 0 40px}
+.pie a{color:#fff}
+.pie-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+@media(max-width:760px){.pie-grid{grid-template-columns:1fr}}
+.pie h2{font-size:1.15rem;color:#fff;margin-bottom:12px;max-width:none}
+.pie ul{list-style:none;display:grid;gap:6px}
+.pie .marca{color:#fff}
+.pie p{margin-top:12px;font-size:1rem}
+.pie .legal{margin-top:44px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem;color:#A9BBA3}
+
+@media(max-width:600px){.bloque{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ===== Restaurantes ===== */
+.hero-r{padding:clamp(40px,7vh,88px) 0 80px}
+.hero-r-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}
+@media(max-width:900px){.hero-r-grid{grid-template-columns:1fr;gap:40px}}
+.hero-r h1{font-size:clamp(2.8rem,6.6vw,5rem);font-weight:800;line-height:1;letter-spacing:-.02em;max-width:11ch}
+.lede{margin-top:22px;font-size:clamp(1.12rem,1.8vw,1.3rem);color:var(--tinta-2);max-width:48ch}
+.zona{margin-top:16px;font-size:1rem;color:var(--tinta-2)}
+.escandallo{background:var(--tinta);color:#E4EBDC;border-radius:10px;padding:30px 28px 24px}
+.escandallo h2{color:#fff;font-size:1.45rem;max-width:none}
+.esc-salida{margin-top:8px}
+.esc-num{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.esc-num output{font-family:var(--serif);font-weight:800;font-size:clamp(3.4rem,8vw,5.4rem);line-height:1;letter-spacing:-.02em;color:var(--claro);font-variant-numeric:tabular-nums}
+.esc-num span{font-size:1.1rem;color:#C9D7C1}
+.esc-det{margin-top:10px;font-size:1rem;color:#C9D7C1;min-height:3.2em}
+.seg{border:0;margin-top:20px;min-width:0}
+.seg legend{font-size:.95rem;color:#C9D7C1;margin-bottom:8px;padding:0}
+.opciones{display:flex;flex-wrap:wrap;gap:8px}
+.opciones label{position:relative}
+.opciones input{position:absolute;opacity:0;width:1px;height:1px}
+.opciones span{display:inline-block;padding:8px 14px;border:1px solid rgba(255,255,255,.35);border-radius:6px;font-size:1rem;color:#fff;cursor:pointer;transition:background-color .15s,color .15s}
+.opciones label:hover span{border-color:#fff}
+.opciones input:checked + span{background:var(--claro);border-color:var(--claro);color:var(--tinta);font-weight:700}
+.opciones input:focus-visible + span{outline:3px solid #E7A9CF;outline-offset:2px}
+.esc-g{margin-top:20px}
+.esc-g label{display:block;font-size:.95rem;color:#C9D7C1}
+.esc-g strong{color:#fff}
+.esc-g input{display:block;width:100%;height:30px;margin-top:6px;accent-color:var(--claro);cursor:pointer}
+.esc-escala{display:flex;justify-content:space-between;font-size:.85rem;color:#AFC0A8}
+.esc-nota{margin-top:16px;font-size:.88rem;color:#AFC0A8}
+.tres{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:36px}
+@media(max-width:860px){.tres{grid-template-columns:1fr;gap:26px}}
+.tres > div{border-top:3px solid var(--brote);padding-top:16px}
+.tres p{margin-top:8px;color:var(--tinta-2)}
+.precio{font-family:var(--serif);font-weight:700;font-size:1.15rem;white-space:nowrap}
+.nota-tabla{margin-top:16px;font-size:1rem;color:var(--tinta-2)}
+.pasos{list-style:none;counter-reset:paso;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-top:40px}
+.pasos li{position:relative;counter-increment:paso;padding-top:50px}
+.pasos li::before{content:counter(paso);position:absolute;top:0;left:0;font-family:var(--serif);font-weight:800;font-size:2.4rem;line-height:1;color:var(--brote)}
+.pasos p{margin-top:6px;color:var(--tinta-2)}
+.zona-larga{margin-top:32px;font-weight:700}
+.firma{margin-top:28px;color:#C9D7C1}
+</style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<nav class="nav" aria-label="Principal">
+  <div class="nav-in">
+    <a class="marca" href="index.html" aria-label="Germinados Muñiz, inicio">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#17301C" stroke-width="2.4" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#4C8C3F"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#8E3B6B"/></svg>
+      <span>Germinados Muñiz</span>
+    </a>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="restaurantes.html" aria-current="page">Restaurantes</a></li>
+      <li><a href="fruterias.html">Fruterías</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero-r">
+  <div class="wrap hero-r-grid">
+    <div>
+      <h1>Cortados el día del reparto.</h1>
+      <p class="lede">Microgreens (microbrotes) de guisante, girasol, brócoli y rábano rojo, cultivados en Grado y entregados en tu cocina un día fijo a la semana. Para rematar un plato por unos céntimos.</p>
+      <div class="acciones">
+        <a class="btn btn-wa" href="#contacto">Pedir una muestra</a>
+        <a class="btn btn-linea" href="#tarifa">Ver la tarifa</a>
+      </div>
+      <p class="zona">Reparto los jueves en Grado y alrededores.</p>
+    </div>
+    <div class="escandallo" role="group" aria-labelledby="esc-tit">
+      <h2 id="esc-tit">¿Cuánto cuesta en el plato?</h2>
+      <div class="esc-salida" aria-live="polite">
+        <p class="esc-num"><output id="coste">0,16 €</output><span>por plato</span></p>
+        <p class="esc-det" id="esc-det">Un envase de 1 L de guisante (unos 90 g) sale por 3,60 € y da para unas 22 raciones de 4 g.</p>
+      </div>
+      <fieldset class="seg">
+        <legend>Variedad</legend>
+        <div class="opciones">
+          <label><input type="radio" name="variedad" value="guisante" checked><span>Guisante</span></label>
+          <label><input type="radio" name="variedad" value="girasol"><span>Girasol</span></label>
+          <label><input type="radio" name="variedad" value="brocoli"><span>Brócoli</span></label>
+          <label><input type="radio" name="variedad" value="rabano"><span>Rábano rojo</span></label>
+        </div>
+      </fieldset>
+      <div class="esc-g">
+        <label for="gramos">Gramos por plato: <strong id="g-out">4 g</strong></label>
+        <input type="range" id="gramos" min="2" max="15" step="1" value="4">
+        <div class="esc-escala" aria-hidden="true"><span>remate</span><span>ingrediente</span></div>
+      </div>
+      <fieldset class="seg">
+        <legend>Pedido</legend>
+        <div class="opciones">
+          <label><input type="radio" name="tarifa" value="40" checked><span>Suelto, 40 €/kg</span></label>
+          <label><input type="radio" name="tarifa" value="35"><span>Fijo semanal, 35 €/kg</span></label>
+        </div>
+      </fieldset>
+      <p class="esc-nota">Cálculo orientativo, con el peso medio de cada envase.</p>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="bloque papel" aria-labelledby="t-porque">
+  <div class="wrap">
+    <h2 id="t-porque">Lo que cambia en tu pase.</h2>
+    <div class="tres">
+      <div><h3>Frescura de horas</h3><p>Corto tu pedido el mismo día que te lo llevo. La fecha de corte va en la etiqueta de cada envase.</p></div>
+      <div><h3>Céntimos por ración</h3><p>Con 3 a 5 gramos rematas un plato. Arriba tienes lo que te sale con cada variedad.</p></div>
+      <div><h3>Cero elaboración</h3><p>No se cocinan ni se trocean: se reparten sobre el plato en el último momento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque" id="variedades" aria-labelledby="t-var">
+  <div class="wrap">
+    <h2 id="t-var">Qué aporta cada variedad.</h2>
+    <p class="entrada">Cuatro de las variedades que más se usan en cocina, en producción ahora mismo.</p>
+    <div class="tabla-caja">
+      <table>
+        <thead><tr><th scope="col">Variedad</th><th scope="col">Sabor</th><th scope="col">Textura</th><th scope="col">Dónde luce</th><th scope="col">Envase 1 L</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Guisante<small><i>Pisum sativum</i></small></th><td>Dulce, a guisante tierno</td><td>Tierna, con zarcillos</td><td>Ensaladas, pescados, pasta fría</td><td>unos 90 g</td></tr>
+          <tr><th scope="row">Girasol<small><i>Helianthus annuus</i></small></th><td>A fruto seco</td><td>Carnosa y crujiente; aguanta sobre caliente</td><td>Tostas, quesos, huevos, carnes</td><td>unos 85 g</td></tr>
+          <tr><th scope="row">Brócoli<small><i>Brassica oleracea</i></small></th><td>Suave y fresco</td><td>Fina</td><td>Cremas espesas, arroces, carnes blancas</td><td>unos 80 g</td></tr>
+          <tr><th scope="row">Rábano rojo<small><i>Raphanus sativus</i></small></th><td>Picante suave</td><td>Crujiente; tallo morado</td><td>Aguacate, huevos, pescado crudo, tacos</td><td>unos 80 g</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="nota-tabla">Duran seis días desde el corte, en cámara a 2–4 °C. Irán llegando mostaza, rúcula, col lombarda, remolacha y amaranto.</p>
+  </div>
+</section>
+
+<section class="bloque papel" id="tarifa" aria-labelledby="t-tarifa">
+  <div class="wrap">
+    <h2 id="t-tarifa">Tarifa por kilo, envase a envase.</h2>
+    <p class="entrada">Sirvo en envase rígido de 1 L (unos 80–90 g) o de 2 L (unos 155–175 g), según la variedad. Pagas el peso.</p>
+    <div class="tabla-caja">
+      <table>
+        <thead><tr><th scope="col">Variedades</th><th scope="col">Pedido suelto</th><th scope="col">Pedido fijo semanal</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Guisante, girasol, brócoli y rábano rojo</th><td class="precio">40 €/kg</td><td class="precio">35 €/kg</td></tr>
+          <tr><th scope="row">De color: remolacha y amaranto; cilantro, solo bajo pedido<small>Cuando estén disponibles</small></th><td class="precio">50–55 €/kg</td><td class="precio">45–50 €/kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tres">
+      <div><h3>Pedido fijo: tus bandejas, reservadas</h3><p>Mismo día y misma cantidad cada semana, desde 1 kg entre todas las variedades. Siembro tus bandejas cada semana: tienes el producto asegurado y yo no desperdicio nada. Por eso cuesta menos.</p></div>
+      <div><h3>Pedido mínimo</h3><p>Un envase de 1 L por variedad.</p></div>
+      <div><h3>Eventos y catering</h3><p>Encárgalo con dos semanas de antelación y siembro para tu evento. Las mezclas de color van a la tarifa de variedades de color.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bloque" id="pedido" aria-labelledby="t-pedido">
+  <div class="wrap">
+    <h2 id="t-pedido">Cómo funciona el pedido.</h2>
+    <ol class="semana" aria-label="Pides hasta el lunes y el reparto es el jueves">
+      <li class="alt"><abbr title="lunes">L</abbr><small>pides</small></li>
+      <li><abbr title="martes">M</abbr><small></small></li>
+      <li><abbr title="miércoles">X</abbr><small></small></li>
+      <li class="si"><abbr title="jueves">J</abbr><small>reparto</small></li>
+      <li><abbr title="viernes">V</abbr><small></small></li>
+      <li><abbr title="sábado">S</abbr><small></small></li>
+      <li><abbr title="domingo">D</abbr><small></small></li>
+    </ol>
+    <ol class="pasos">
+      <li><h3>Muestra sin compromiso</h3><p>Te llevo una muestra de las cuatro variedades para que las pruebes en tu cocina.</p></li>
+      <li><h3>Pides hasta el lunes</h3><p>Me dices lo que necesitas para esa semana.</p></li>
+      <li><h3>Corto y reparto el jueves</h3><p>Te lo llevo al local en nevera portátil, con la etiqueta de lote en cada envase.</p></li>
+      <li><h3>Si te encaja, lo fijamos</h3><p>Mismo día y misma cantidad cada semana, a la tarifa de pedido fijo.</p></li>
+    </ol>
+    <p class="zona-larga">Reparto en Grado y alrededores. ¿Tu cocina está en Oviedo? Escríbeme igualmente.</p>
+  </div>
+</section>
+
+<section class="bloque papel" id="camara" aria-labelledby="t-camara">
+  <div class="wrap dos">
+    <div>
+      <h2 id="t-camara">En la cámara y en el pase.</h2>
+      <ul class="lista">
+        <li>Guárdalos entre 2 y 4 °C, en su envase cerrado.</li>
+        <li>Saca solo lo que vayas a usar en el servicio y vuelve a cerrar.</li>
+        <li>Sobre caldos y sopas calientes se marchitan al momento. Sobre cremas espesas, tostas, carnes o pescados aguantan bien.</li>
+        <li>Duran seis días desde el corte, con la fecha en la etiqueta.</li>
+      </ul>
+    </div>
+    <figure class="etiqueta-fig">
+      <div class="etiqueta" role="img" aria-label="Ejemplo de etiqueta: microgreens de guisante en envase de 1 litro, lote T2-GU-240926, corte el 24 de septiembre de 2026, consumir antes del 30 de septiembre de 2026, peso neto 90 gramos.">
+        <div class="et-cab"><b>Germinados Muñiz</b><span>Grado (Asturias)</span></div>
+        <p class="et-prod">Microgreens de guisante, envase 1 L</p>
+        <dl>
+          <dt>Lote</dt><dd class="lote">T2-GU-240926</dd>
+          <dt>Corte</dt><dd>24/09/2026</dd>
+          <dt>Consumir antes de</dt><dd>30/09/2026</dd>
+          <dt>Peso neto</dt><dd>90 g</dd>
+        </dl>
+      </div>
+      <figcaption>Ejemplo de etiqueta. Con el lote se sabe de qué bandeja y de qué día sale cada envase.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="bloque oscura" id="contacto" aria-labelledby="t-contacto">
+  <div class="wrap">
+    <h2 id="t-contacto">Pruébalos en tu cocina.</h2>
+    <p class="entrada">Pregunta por las muestras para hostelería en el puesto del mercado de Grado (martes, viernes y domingo) o escríbeme por Instagram, y te llevo una. Si me pasas tu carta, te digo qué variedad encaja en cada plato.</p>
+    <div class="acciones">
+      <a class="btn btn-wa" href="https://www.instagram.com/germinadosmuniz/">Escribir por Instagram</a>
+    </div>
+    <p class="firma">Carlos Muñiz, productor. Grado (Asturias).</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie-grid">
+      <div>
+        <a class="marca" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24V12" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/><path d="M13 13C13 8 9 5 4 5c0 5 4 8 9 8Z" fill="#7DBB6B"/><path d="M13 13c0-5 4-8 9-8 0 5-4 8-9 8Z" fill="#C77BA6"/></svg><span>Germinados Muñiz</span></a>
+        <p>Microgreens cultivados y cortados a mano en Grado (Asturias) por Carlos Muñiz.</p>
+      </div>
+      <div>
+        <h2>Páginas</h2>
+        <ul>
+          <li><a href="index.html">Qué son los microgreens</a></li>
+          <li><a href="restaurantes.html">Para restaurantes</a></li>
+          <li><a href="fruterias.html">Para fruterías</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li>Mercado de Grado: martes, viernes y domingo</li>
+          <li><a href="https://www.instagram.com/germinadosmuniz/">Instagram: @germinadosmuniz</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">© 2026 Germinados Muñiz. Grado, Asturias.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+'use strict';
+const G = { guisante: 90, girasol: 85, brocoli: 80, rabano: 80 };
+const NOMBRE = { guisante: 'guisante', girasol: 'girasol', brocoli: 'brócoli', rabano: 'rábano rojo' };
+const euros = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const rango = document.getElementById('gramos');
+const elegido = n => { const e = document.querySelector(`input[name="${n}"]:checked`); return e ? e.value : null; };
+function calcular() {
+  const v = elegido('variedad') || 'guisante';
+  const tarifa = parseFloat(elegido('tarifa') || '40');
+  const g = parseInt(rango.value, 10);
+  const env = G[v];
+  document.getElementById('coste').textContent = euros.format(g * tarifa / 1000);
+  document.getElementById('g-out').textContent = g + ' g';
+  document.getElementById('esc-det').textContent =
+    `Un envase de 1 L de ${NOMBRE[v]} (unos ${env} g) sale por ${euros.format(env * tarifa / 1000)} y da para unas ${Math.floor(env / g)} raciones de ${g} g.`;
+}
+if (rango) {
+  document.querySelectorAll('.escandallo input').forEach(i => { i.addEventListener('input', calcular); i.addEventListener('change', calcular); });
+  calcular();
+}
+})();
+</script>
+</body>
+</html>
